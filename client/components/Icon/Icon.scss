@@ -1,0 +1,140 @@
+@import '../../styles/colors.scss';
+
+.icon {
+  width: 0.9rem;
+  height: 0.9rem;
+
+  &--close {
+    fill: $gray-blue-icon;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    right: 20px;
+    top: 35%;
+    cursor: pointer;
+
+    &:hover { fill: $blue; }
+  }
+
+  &--publish {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &--new-task {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  &--video { fill: $blue; }
+
+  &--photo { fill: $green; }
+
+  &--audio { fill: $yellow-audio; }
+
+  &--video-white,
+  &--audio-white,
+  &--photo-white { fill: $white; }
+
+  &--edit {
+    width: 2rem;
+    height: 2rem;
+    fill: $white;
+  }
+
+  &--edit-small {
+    width: 2rem;
+    height: 2rem;
+    fill: $blue;
+  }
+
+  &--download {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: $blue;
+  }
+
+  &--plus {
+    width: 1.4rem;
+    height: 1.4rem;
+    fill: $gray-blue-icon;
+
+    &:hover {
+      fill: $blue;
+    }
+  }
+
+  &--delete {
+    margin: 0.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: $white;
+  }
+
+  &--back {
+    width: 2.5rem;
+    height: 1.1rem;
+  }
+
+  &--trans {
+    width: 2.5rem;
+    height: 1.1rem;
+    fill: $blue;
+  }
+
+  &--trans-red {
+    width: 1.3rem;
+    height: 1.6rem;
+    fill: $red;
+  }
+
+  &--fullscreen {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &--volume {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  &--play {
+    width: 0.9rem;
+    height: 1.2rem;
+  }
+
+  &--itblue {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &--back,
+  &--fullscreen,
+  &--volume,
+  &--play,
+  & #collapse-icon,
+  & #stop-icon,
+  & #muted-icon {
+    fill: $white;
+
+    &:hover {
+      fill: rgba($white, 0.8);
+    }
+  }
+
+  &--search,
+  &--calendar {
+    margin-left: -3rem;
+  }
+
+  &--arrow-down {
+    z-index: 2;
+  }
+
+  &--red {
+    width: 1.3rem;
+    height: 1.6rem;
+    fill: transparent;
+    stroke: $red;
+  }
+}

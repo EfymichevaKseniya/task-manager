@@ -1,0 +1,111 @@
+@import '../../styles/colors.scss';
+
+.new-task {
+  & .btn--transparent {
+    & .btn-text { color: $blue; }
+
+    & .icon--back { fill: $blue; }
+  }
+
+  & .btn-wrapper {
+    display: inline-block;
+
+    & .btn--blue,
+    & .btn--transparent { margin-left: 2rem; }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: 68% 32%;
+  }
+
+  &__wrapper {
+    margin-left: 2rem;
+    padding: 3rem;
+    background: $white;
+
+    @include outline(1px, $blue-outline, 4px);
+
+    & .input--type-normal {
+      width: 38.3rem;
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+    }
+
+    & .input__text--name,
+    & .input__text--description {
+      margin-bottom: 4rem;
+    }
+
+    & input[type=textarea] {
+      height: 11rem;
+    }
+  }
+
+  &__sidebar {
+    &-wrapper {
+      margin-left: 2rem;
+      padding: 3rem;
+      background: $white;
+
+      @include outline(1px, $blue-outline, 4px);
+
+      & .input,
+      & .select {
+        margin-top: 2rem;
+      }
+
+      & .input {
+        margin-right: 0;
+        width: 100%;
+
+        & .input--calendar-normal {
+          width: 33.4rem;
+        }
+
+        & .input-text { width: 100%; }
+      }
+    }
+
+    &__item {
+      @include font(1.4rem, 400, 2.1rem);
+
+      color: rgba($txt, 0.6);
+      display: flex;
+      width: 100%;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background: $blue-outline;
+        width: auto;
+        height: 1px;
+      }
+
+      &:not(:first-child) { margin-top: 2rem; }
+
+      &-descr {
+        @include font(1.4rem, 400, 2.1rem);
+
+        color: rgba($txt, 0.6);
+      }
+
+      &-separator {
+        flex: 1;
+        height: 0.1rem;
+        background: $blue-outline;
+        margin-top: 1.4rem;
+        margin-left: 0.4rem;
+        margin-right: 0.4rem;
+      }
+
+      &-text {
+        @include font(1.4rem, 500, 2.1rem);
+
+        color: $txt;
+      }
+    }
+  }
+}

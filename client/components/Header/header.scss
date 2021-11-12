@@ -1,0 +1,23 @@
+@import '../../styles/styles.scss';
+
+.header {
+  border-bottom: 1px solid $gray-line;
+  background: $white;
+
+  &__wrapper {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__wrapper-left__side,
+  &__wrapper-right__side {
+    display: flex;
+    align-items: center;
+  }
+
+  &__wrapper-left__side .logo {
+    margin-right: 3rem;
+  }
+}

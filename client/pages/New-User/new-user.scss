@@ -1,0 +1,78 @@
+@import '../../styles/colors.scss';
+
+.new-user {
+  & .container {
+    max-width: 80rem;
+  }
+
+  &__back-link {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+
+    & .icon--back {
+      fill: $blue;
+    }
+  }
+
+  &__title {
+    @include font(2.4rem, 500, 2.8rem);
+
+    margin-left: 1rem;
+  }
+
+  &__form {
+    &-wrapper {
+      display: grid;
+      grid-template-columns: 30% 70%;
+      width: 80rem;
+      margin: 0 auto;
+      padding: 5rem;
+      background: $white;
+
+      @include outline(1px, $blue-outline, 0.4rem);
+    }
+
+    &-avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 5.6rem;
+
+      &-img {
+        width: 12rem;
+        height: 12rem;
+        padding-top: 2.7rem;
+        margin-bottom: 1.6rem;
+
+        @include outline(0.1rem, $blue-outline, 50%);
+      }
+    }
+
+    &-fields {
+      & .input {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      & #userName {
+        margin-bottom: 2rem;
+      }
+
+      & .input--role-normal {
+        width: 100%;
+      }
+    }
+  }
+
+  & .upload__btn {
+    background: transparent;
+
+    &:hover {
+      background: $itblue;
+
+      & .upload__text { color: $blue; }
+    }
+  }
+}

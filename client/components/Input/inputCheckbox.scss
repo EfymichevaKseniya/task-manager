@@ -1,0 +1,108 @@
+@import '../../styles/colors.scss';
+
+.checkbox {
+  position: relative;
+
+  &-wrapper {
+    width: 100%;
+    display: flex;
+    padding-top: 4rem;
+
+    &-tags { position: relative; }
+  }
+
+  &__input {
+    z-index: -1;
+    opacity: 0;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &__label {
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+
+    @include font(1.2rem, 500, 1.4rem);
+  }
+
+  &__text {
+    padding: 1.2rem 1.5rem;
+    display: block;
+  }
+
+  &__btn {
+    background: $white;
+    cursor: pointer;
+
+    &--contentMaker,
+    &--all,
+    &--manager,
+    &--admin {
+      color: $blue;
+
+      @include outline(1px, $blue, 4px);
+
+      &:hover { background: rgba($blue, 0.1); }
+
+      & input[type=checkbox]:checked + span {
+        background: $blue;
+
+        &.checkbox__text { color: $white; }
+      }
+    }
+
+    &:not(:first-child) { margin-left: 1rem; }
+
+    &--video {
+      color: $blue;
+
+      @include outline(1px, $blue, 4px);
+
+      &:hover { background: rgba($blue, 0.1); }
+
+      & input[type=checkbox]:checked + .content {
+        background: $blue;
+
+        & .content__box-text { color: $white; }
+
+        & .icon--video { fill: $white; }
+      }
+    }
+
+    &--audio {
+      color: $yellow-audio;
+
+      @include outline(1px, $yellow-audio, 4px);
+
+      &:hover { background: rgba($yellow-audio, 0.1); }
+
+      & input[type=checkbox]:checked + .content {
+        background: $yellow-audio;
+
+        & .content__box-text { color: $white; }
+
+        & .icon--audio { fill: $white; }
+      }
+    }
+
+    &--photo {
+      color: $green;
+
+      @include outline(1px, $green, 4px);
+
+      &:hover { background: rgba($gray-line, 0.1); }
+
+      & input[type=checkbox]:checked + .content {
+        background: $green;
+
+        & .content__box-text { color: $white; }
+
+        & .icon--photo { fill: $white; }
+      }
+    }
+  }
+}
+
+.filter-hide { display: none; }

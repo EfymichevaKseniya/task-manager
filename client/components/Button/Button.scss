@@ -1,0 +1,166 @@
+@import '../../styles/colors.scss';
+
+.btn {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+
+  &-wrapper {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+
+    &--one { justify-content: flex-end; }
+    &--add { display: flex; }
+  }
+
+  &__small {
+    padding: 0.7rem 0.7rem;
+  }
+
+  &--blue {
+    background: $blue;
+
+    &:hover { background: $blue-btn-hover; }
+
+    &--active,
+    &:focus { background: $blue-btn-active; }
+
+    &:disabled { background: rgba($blue, 0.5); }
+  }
+
+  &--green {
+    background: $green;
+
+    &:hover { background: $green-hover; }
+
+    &--active,
+    &:focus { background: $green-active; }
+
+    &:disabled { background: rgba($green, 0.5); }
+  }
+
+  &--transparent {
+    &:hover { background: $itblue; }
+
+    &--active,
+    &:focus { background: $itblue-active; }
+
+    &:disabled { opacity: 0.3; }
+  }
+
+  &--red {
+    margin-left: 3rem;
+
+    &:hover { background: $red-hover; }
+
+    &--active,
+    &:focus { background: $red-active; }
+
+    &:disabled { opacity: 0.3; }
+  }
+
+  &--edit,
+  &--delete {
+    padding: 1rem;
+    background: $blue;
+
+    &:hover { background: $blue-btn-hover; }
+
+    &--active,
+    &:focus { background: $blue-btn-active; }
+
+    &:disabled { background: rgba($blue, 0.5); }
+  }
+
+  // &--delete-small {
+  //   &:focus .icon--delete-small {
+  //     stroke: $white;
+  //   }
+
+  //   &:hover .icon--delete-small {
+  //     stroke: $white;
+  //   }
+  // }
+
+  &--download {
+    &:focus .icon--download {
+      fill: $white;
+    }
+
+    &:hover .icon--download {
+      fill: $white;
+    }
+  }
+
+  &--edit-small {
+    &:hover .icon--edit-small { fill: $white; }
+
+    &:focus .icon--edit-small { fill: $white; }
+
+    &:disabled .icon--edit-small { fill: rgba($blue, 0.3); }
+  }
+
+  &--primary {
+    background: $itblue;
+
+    &:hover { background: $blue-btn-hover; }
+
+    &--active,
+    &:focus { background: $blue-btn-active; }
+
+    &:disabled { background: rgba($itblue, 0.3); }
+
+    & .icon--edit {
+      fill: $blue;
+    }
+
+    & .icon--delete {
+      fill: $blue;
+    }
+
+    &:hover .icon--edit,
+    &:hover .icon--delete,
+    &:focus .icon--edit,
+    &:focus .icon--delete {
+      fill: $white;
+    }
+  }
+
+  &--edit-small,
+  &--delete-small,
+  &--download {
+    padding: 0.7rem;
+    background: $itblue;
+
+    &:hover { background: $blue-btn-hover; }
+
+    &--active,
+    &:focus { background: $blue-btn-active; }
+
+    &:disabled { background: rgba($itblue, 0.3); }
+  }
+
+  &-text {
+    color: $white;
+    padding-left: 1rem;
+
+    @include font(1.4rem, 500, 1.6rem);
+
+    &--trans,
+    &--download,
+    &--primary {
+      color: $blue;
+    }
+
+    &--transparent.icon #back { fill: $blue; }
+
+    &--red {
+      color: $red;
+    }
+  }
+
+  &--download:hover .btn__kit-text--download { color: $white; }
+}

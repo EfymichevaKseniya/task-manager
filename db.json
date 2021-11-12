@@ -1,0 +1,307 @@
+{
+  "tasks": [
+    {
+      "id": 0,
+      "name": "Название повседневная практика показывает",
+      "type": {
+        "id": 0,
+        "name": "video"
+      },
+      "executor": {
+        "id": 0,
+        "name": "Аркадий Юрченко"
+      },
+      "dateExpired": "2021-10-25T06:39:05.325Z",
+      "status": {
+        "id": 0,
+        "name": "inWork"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Название равным образом начало повседневной работы",
+      "type": {
+        "id": 10,
+        "name": "audio"
+      },
+      "executor": {
+        "id": 6740,
+        "name": "Эльза Калининa"
+      },
+      "dateExpired": "2021-10-25T06:39:05.325Z",
+      "status": {
+        "id": 20,
+        "name": "feedback"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Название с другой стороны начало повседневной работы по формированию",
+      "type": {
+        "id": 1,
+        "name": "video"
+      },
+      "executor": {
+        "id": 234,
+        "name": "Дмитрий Румянцев"
+      },
+      "dateExpired": "2021-10-25T06:39:05.325Z",
+      "status": {
+        "id": 23,
+        "name": "approved"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Название равным образом начало повседневной работы",
+      "type": {
+        "id": 2,
+        "name": "photo"
+      },
+      "executor": {
+        "id": 134,
+        "name": "Гена Черемнов"
+      },
+      "dateExpired": "2021-10-25T06:39:05.325Z",
+      "status": {
+        "id": 21,
+        "name": "feedback"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Название повседневная практика показывает",
+      "type": {
+        "id": 3,
+        "name": "audio"
+      },
+      "executor": {
+        "id": 453,
+        "name": "Инесса Соловьёвa"
+      },
+      "dateExpired": "2021-10-25T06:39:05.325Z",
+      "status": {
+        "id": 22,
+        "name": "inWork"
+      }
+    }
+  ],
+  "users": [
+    {
+      "id": 101,
+      "name": "Семён Щеглов",
+      "email": "user@example.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1241,
+        "name": "admin"
+      }
+    },
+    {
+      "id": 102,
+      "name": "Инесса Соловьёвa",
+      "email": "inessa90@gmail.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1243,
+        "name": "contentMaker"
+      }
+    },
+    {
+      "id": 103,
+      "name": "Оскар Калинин",
+      "email": "oscar@gmail.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1244,
+        "name": "contentMaker"
+      }
+    },
+    {
+      "id": 104,
+      "name": "Альбина Ткаченко",
+      "email": "albina_t@gmail.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1245,
+        "name": "manager"
+      }
+    },
+    {
+      "id": 105,
+      "name": "Адам Галкин",
+      "email": "galkin@gmail.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1246,
+        "name": "admin"
+      }
+    },
+    {
+      "id": 106,
+      "name": "София Мельник",
+      "email": "melnik_s@gmail.com",
+      "avatar": "https://via.placeholder.com/240",
+      "role": {
+        "id": 1247,
+        "name": "manager"
+      }
+    },
+    {
+      "user": {
+        "name": "dsad dasda",
+        "email": "dsa@dsad.wrewr",
+        "role": "Контент-мэйкер",
+        "password": "fdsf345",
+        "avatar": ""
+      },
+      "id": 107
+    }
+  ],
+  "contents": [
+    {
+      "author": {
+        "name": "name",
+        "id": 546313
+      },
+      "dateCreated": "12020-06-02T14:13:20.570Z",
+      "format": "mp4",
+      "id": 84189,
+      "name": "dolor sit ipsum do",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "video",
+        "id": 6887723
+      },
+      "url": "../../../public/content/video.mp4"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 2434664564
+      },
+      "dateCreated": "2021-02-15T01:05:43.592Z",
+      "format": "mp4",
+      "id": 64575242,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "video",
+        "id": 435557677
+      },
+      "url": "https://www.youtube.com/watch?v=ScMzIvxBSi4"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 5974123
+      },
+      "dateCreated": "1944-03-15T01:05:43.592Z",
+      "format": "jpg",
+      "id": 7967312,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "photo",
+        "id": 908321
+      },
+      "url": "https://via.placeholder.com/790"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 182349
+      },
+      "dateCreated": "2021-07-15T01:05:43.592Z",
+      "format": "mp3",
+      "id": 2980232,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "audio",
+        "id": 34678
+      },
+      "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 15676786
+      },
+      "dateCreated": "1944-03-15T01:05:43.592Z",
+      "format": "mp3",
+      "id": 645676,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "audio",
+        "id": 6487851
+      },
+      "url": "https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_2MG.mp3"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 2896533
+      },
+      "dateCreated": "2021-03-15T01:05:43.592Z",
+      "format": "mp4",
+      "id": 537887,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "video",
+        "id": 1679776345
+      },
+      "url": "https://www.youtube.com/watch?v=ScMzIvxBSi4"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 6786923
+      },
+      "dateCreated": "1944-03-15T01:05:43.592Z",
+      "format": "jpg",
+      "id": 147686,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "photo",
+        "id": 146786765
+      },
+      "url": "https://via.placeholder.com/393"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 1478768645
+      },
+      "dateCreated": "2020-03-15T01:05:43.592Z",
+      "format": "mp3",
+      "id": 75434367,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "audio",
+        "id": 54245787
+      },
+      "url": "https://www.youtube.com/watch?v=ScMzIvxBSi4"
+    },
+    {
+      "author": {
+        "name": "name",
+        "id": 16568655
+      },
+      "dateCreated": "2021-03-15T01:05:43.592Z",
+      "format": "jpg",
+      "id": 413456786,
+      "name": "sint Du",
+      "preview": "https://via.placeholder.com/393",
+      "type": {
+        "name": "photo",
+        "id": 78775252
+      },
+      "url": "https://via.placeholder.com/393"
+    }
+  ]
+}

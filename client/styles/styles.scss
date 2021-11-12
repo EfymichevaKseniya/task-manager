@@ -1,0 +1,84 @@
+@import './colors';
+@import './fonts';
+@import './reset';
+@import './libs';
+
+html,
+body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  color: $txt;
+  font-size: 10px;
+}
+
+body {
+  @include font(14px, 400, 1rem);
+}
+
+a,
+button { cursor: pointer; }
+
+.main {
+  flex: 1 0 auto;
+  background: $background;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.page { overflow: hidden; }
+
+.container {
+  width: 100%;
+  max-width: 125.2rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.wrapper {
+  background: $background;
+  padding-bottom: 27.6rem;
+}
+
+.wrapper-task {
+  display: grid;
+  grid-template-columns: 68% 32%;
+}
+
+.article { margin-bottom: 3.7rem; }
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px); /* this kind of fail in Webkit and Opera */
+  height: 1px; /* since clip is not reliable we need that */
+  width: 1px; /* since clip is not reliable we need that too */
+  overflow: hidden; /* since clip is not reliable we also need that */
+}
+
+.inWork { color: $inwork; }
+
+.feedback { color: $wait; }
+
+.approved { color: $done; }
+
+.hidden { display: none; }
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wrapper__cards {
+  height: 100vh;
+}
+
+.fullscreen {
+  width: 100%;
+}

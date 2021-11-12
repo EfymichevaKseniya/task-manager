@@ -1,0 +1,163 @@
+@import '../../styles/styles.scss';
+
+.input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  outline: none;
+
+  & input[type=date] {
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+
+    // &::before {
+    //   color: rgba($txt, 0.6);
+    //   content: attr(placeholder);
+    //   margin-right: 0.5rem;
+    // }
+
+    &:focus::before {
+      content: '';
+    }
+
+    // &::-webkit-datetime-edit-fields-wrapper {
+    //   opacity: 0;
+    // }
+
+    &:focus::-webkit-datetime-edit-fields-wrapper {
+      opacity: 1;
+    }
+
+    // &::after {
+    //   display: none;
+    // }
+  }
+
+  & .icon--calendar {
+    color: $blue;
+    margin-left: -3rem;
+    margin-right: 2rem;
+  }
+
+  & .icon--arrow-down {
+    margin-left: -2rem;
+  }
+
+  & .icon--not-visible {
+    margin-left: -3rem;
+  }
+
+  &--calendar-small {
+    width: 18.7rem;
+    margin-right: 2rem;
+  }
+
+  &--search-normal {
+    &:focus-within.input--search-normal .icon--search {
+      transform: translate(-35rem);
+      transition: transform 0.2s ease-in-out;
+    }
+
+    &:focus-within.icon--close {
+      fill: $gray-blue-icon;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    &:focus { @include outline(1px, $blue, 4px); }
+  }
+
+  &__button {
+    border: none;
+    background: transparent;
+
+    &--close {
+      position: absolute;
+      top: 30%;
+      right: 2rem;
+    }
+  }
+
+  &__icon {
+    border: none;
+    background: transparent;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 1.05rem 1.5rem;
+    background: transparent;
+    background: $white;
+
+    @include outline(1px, $blue-outline, 4px);
+
+    &:focus.input__text .icon--arrow-down {
+      transform: rotate(180deg);
+      transition: rotate 0.3s ease-in-out;
+    }
+
+    &:hover { border-color: $gray-blue-icon; }
+
+    &:focus {
+      border-color: $blue;
+    }
+
+    &--error { border-color: $red; }
+
+    &--search-normal {
+      width: 39.4rem;
+
+      &:focus {
+        caret-color: $txt;
+        padding-left: 4rem;
+        color: inherit;
+
+        &::placeholder {
+          color: transparent;
+          transition: color 0.3s ease-in-out;
+        }
+      }
+
+      &:focus.icon--close {
+        fill: $gray-blue-icon;
+      }
+    }
+
+    &--calendar-normal {
+      width: 39.4rem;
+    }
+
+    &--calendar-small {
+      width: 18.7rem;
+    }
+  }
+
+  &__title {
+    margin: 3rem 0;
+
+    & .input__text {
+      width: 100%;
+    }
+  }
+
+  &__textarea {
+    margin-bottom: 3rem;
+    position: relative;
+
+    & .input__text {
+      width: 100%;
+      min-height: 11rem;
+      resize: none;
+      outline: none;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: -1.8rem;
+    left: 0;
+
+    @include font(1.2rem, 500, 1.4rem);
+  }
+}

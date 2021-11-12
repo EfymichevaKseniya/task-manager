@@ -1,0 +1,95 @@
+@import '../../../../styles/colors.scss';
+
+.cardTasks {
+  height: 100vh;
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 52% 40% 8%;
+    align-items: center;
+    color: $txt;
+    background: $white;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-self: center;
+    grid-template-rows: repeat(1, 7rem);
+
+    @include outline(1px, $blue-outline, 4px);
+
+    &:hover {
+      box-shadow: 0 4px 15px rgba($black, 0.15);
+    }
+
+    &-content,
+    &-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    &-title {
+      @include font(1.4rem, 500, 1.6rem);
+
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-status {
+      display: grid;
+      grid-template-columns: 40% 20% 40%;
+      align-items: center;
+
+      &-text {
+        text-align: left;
+      }
+
+      & .icon--calendar {
+        color: $gray-blue-icon;
+        margin-right: 1rem;
+      }
+
+      &-due {
+        display: flex;
+        align-items: center;
+      }
+
+      &-auth {
+        text-align: left;
+        position: relative;
+
+        &::before {
+          content: '';
+          text-align: right;
+          position: absolute;
+          bottom: -15%;
+          left: -110%;
+          width: 110%;
+          height: 2rem;
+          background: linear-gradient(to right, rgba(255, 255, 255, 0), white 80%);
+          pointer-events: none;
+        }
+      }
+    }
+
+    &-button + .card__tasks-button {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.gradientText {
+  display: block;
+  position: absolute;
+  text-align: right;
+  height: 1.5rem;
+  width: 40%;
+  left: 60%;
+  bottom: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 60%);
+  z-index: 1;
+}

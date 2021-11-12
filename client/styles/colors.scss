@@ -1,0 +1,41 @@
+
+$blue: #107eff;
+$green: #43dd9c;
+$green-hover: #51efac;
+$green-active: #33cd8c;
+$yellow-audio: #ffac2f;
+$txt: #313131;
+$blue-outline: #d8e3ec;
+$gray-blue-icon: #95aecd;
+$itblue: #e8f3ff;
+$itblue-active: #c2dfff;
+$red: #ff603e;
+$red-hover: #fff0ec;
+$red-active: #ffd9cf;
+$background: #f3f8fb;
+$white: #fff;
+$gray-line: #c8d8ed;
+$dot: #70bdff;
+$black: #000;
+$blue-btn-hover: #308fff;
+$blue-btn-active: #0067df;
+$inwork: #d663ff;
+$wait: #2cccff;
+$done: #97dc26;
+
+@mixin outline($width, $color, $radius) {
+  border: $width solid $color;
+  border-radius: $radius;
+}
+
+@mixin font-body() {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+}
+
+@mixin font($size, $weight, $height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}

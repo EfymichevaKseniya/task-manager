@@ -1,0 +1,7 @@
+.users {
+  & .users__btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+  }
+}

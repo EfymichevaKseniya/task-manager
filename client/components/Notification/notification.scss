@@ -1,0 +1,78 @@
+@import '../../styles/colors.scss';
+
+.notification {
+  &__button {
+    padding: 0.8rem 0.9rem;
+    background: transparent;
+    border: none;
+    position: relative;
+    display: flex;
+
+    @include outline(1px, transparent, 4px);
+
+    &:focus { background: $blue-outline; }
+
+    &:hover,
+    &:focus { @include outline(1px, $blue-outline, 4px); }
+
+    &-number {
+      padding: 0.1rem 0.3rem;
+      position: absolute;
+      top: 0.3rem;
+      right: 0.2rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      display: flex;
+      align-items: center;
+
+      @include outline(2px, $white, 50%);
+      @include font(1.2rem, 500, 1.4rem);
+
+      background-color: $red;
+      color: $white;
+
+      &--dot {
+        padding: 0.3rem;
+
+        @include outline(2px, $white, 50%);
+
+        top: 0.3rem;
+        right: 0;
+      }
+    }
+  }
+
+  &__card {
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      padding: 1.6rem 2.1rem;
+      background: $white;
+
+      &:hover {
+        box-shadow: 0 4px 15px rgba($black, 0.15);
+      }
+    }
+
+    &-img {
+      margin-right: 1rem;
+      padding: 1.6rem 1.4rem;
+      background: $itblue;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 0.4rem;
+    }
+
+    &-info {
+      &__task {
+        @include font(1.4rem, 500, 1.6rem);
+      }
+
+      &__meta {
+        @include font(1.2rem, 500, 1.4rem);
+
+        color: rgba($txt, 0.6);
+      }
+    }
+  }
+}

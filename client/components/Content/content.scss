@@ -1,0 +1,50 @@
+@import '../../styles/colors.scss';
+
+.content {
+  padding: 1.1rem 1.5rem;
+
+  &__box {
+    display: flex;
+    align-items: center;
+
+    &--video {
+      color: $blue;
+    }
+
+    &--audio {
+      color: $yellow-audio;
+    }
+
+    &--photo {
+      color: $green;
+    }
+
+    &-text {
+      @include font(1.4rem, 500, 1.6rem);
+
+      margin-left: 0.5rem;
+
+      &--video {
+        color: $blue;
+      }
+
+      &--audio {
+        color: $yellow-audio;
+      }
+
+      &--photo {
+        color: $green;
+      }
+    }
+
+    &--photo,
+    &--video,
+    &--audio {
+      &:focus .content__box-text {
+        color: $white;
+      }
+    }
+
+    &-time { margin-left: 5px; }
+  }
+}

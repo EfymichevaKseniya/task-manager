@@ -1,0 +1,12 @@
+.task {
+  & .btn {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

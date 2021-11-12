@@ -1,0 +1,56 @@
+@import '../../../styles/colors.scss';
+
+.users {
+  height: 100vh;
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__item {
+    display: grid;
+    align-items: center;
+    color: $txt;
+    background: $white;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    grid-template-columns: 20% 20% 20% 40%;
+
+    @include outline(1px, $blue-outline, 4px);
+
+    &:hover {
+      box-shadow: 0 4px 15px rgba($black, 0.15);
+    }
+
+    &-name {
+      @include font(1.4rem, 500, 1.6rem);
+
+      margin-left: 2rem;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    &-avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+    }
+
+    &-email,
+    &-role {
+      text-align: left;
+    }
+  }
+}
