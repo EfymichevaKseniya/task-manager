@@ -75,6 +75,11 @@
     "build": "webpack --mode production --config webpack/prod.js"
   },
   "keywords": [],
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
   "author": "Efimycheva Kseniia",
   "license": "ISC"
 }
