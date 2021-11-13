@@ -19,6 +19,14 @@
     "project": ["./tsconfig.json"]
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
+  "ignorePatterns": [
+    "webpack/",
+    ".husky",
+    ".eslint",
+    ".eslintignore",
+    ".gitignore",
+    ".prettierignore"
+  ],
   "rules": {
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],

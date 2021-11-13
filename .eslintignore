@@ -1,0 +1,7 @@
+webpack/
+.husky
+.eslint
+.eslintignore
+.gitignore
+.prettierignore
+package.json

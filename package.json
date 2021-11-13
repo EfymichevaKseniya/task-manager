@@ -45,6 +45,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.0",
     "eslint-webpack-plugin": "^3.0.1",
     "html-loader": "^2.1.2",
@@ -77,15 +78,16 @@
     "server": "json-server --watch db.json --port 5000",
     "build": "webpack --mode production --config webpack/prod.js",
     "prepare-husky": "npx husky-init && npm install && husky set .husky/pre-commit 'node_modules/.bin/lint-staged'",
-    "prettier-all": "prettier --write .",
-    "eslint": "eslint ./client/**/*.{ts,tsx}",
+    "prettier-all": "prettier --write . --ignore-path ./.prettierignore",
+    "eslint": "eslint --quiet ./client/*.{ts,tsx} ./client/**/*.{ts,tsx} --ignore-path ./.eslintignore",
     "prepare": "husky install"
   },
   "keywords": [],
   "lint-staged": {
     "*": [
       "echo PRETTIER**********************",
-      "npm run prettier-all"
+      "npm run prettier-all",
+      "npm run eslint"
     ]
   },
   "author": "Efimycheva Kseniia",

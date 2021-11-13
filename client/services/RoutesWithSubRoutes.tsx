@@ -9,7 +9,8 @@ export default function RouteWithSubRoutes(route: any) {
       path={path}
       render={(props) => (
         // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} />
+        // eslint-disable-next-line
+        <route.component {...props} routes={...route.routes} />
       )}
     />
   );
