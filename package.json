@@ -71,16 +71,20 @@
     "husky": "^7.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",
     "start": "webpack serve  --mode development --config webpack/dev.js",
     "server": "json-server --watch db.json --port 5000",
     "build": "webpack --mode production --config webpack/prod.js",
     "prepare-husky": "npx husky-init && npm install",
     "eslint": "eslint ./client/**/*.{ts,tsx}",
-    "prepare": "husky install asd"
+    "prepare": "husky install"
   },
   "keywords": [],
+  "lint-staged": {
+    "*": [
+      "run-scripts eslint"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "echo 123"
