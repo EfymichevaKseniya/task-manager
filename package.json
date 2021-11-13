@@ -6,9 +6,9 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@types/react-redux": "^7.1.20",
-    "D": "^1.0.0",
     "air-datepicker": "^3.0.0",
     "axios": "^0.23.0",
+    "D": "^1.0.0",
     "formik": "^2.2.9",
     "jquery": "^3.6.0",
     "json-server": "^0.17.0",
@@ -49,10 +49,12 @@
     "eslint-webpack-plugin": "^3.0.1",
     "html-loader": "^2.1.2",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "mini-css-extract-plugin": "^2.2.0",
     "node-sass": "^6.0.1",
     "resolve-url-loader": "^4.0.0",
+    "run-scripts": "^0.4.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
@@ -72,12 +74,15 @@
     "clean": "rm -rf ./dist",
     "start": "webpack serve  --mode development --config webpack/dev.js",
     "server": "json-server --watch db.json --port 5000",
-    "build": "webpack --mode production --config webpack/prod.js"
+    "build": "webpack --mode production --config webpack/prod.js",
+    "prepare-husky": "npx husky-init && npm install",
+    "eslint": "eslint ./client/**/*.{ts,tsx}",
+    "prepare": "husky install"
   },
   "keywords": [],
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "run-scripts eslint"
     }
   },
   "author": "Efimycheva Kseniia",
