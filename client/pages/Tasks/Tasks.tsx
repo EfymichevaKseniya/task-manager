@@ -10,7 +10,9 @@ import Header from '../../components/Header/Header';
 
 function Tasks() {
   const dispatch = useAppDispatch();
-  const { tasks, isLoading, error } = useAppSelector((state) => state.tasksReducer);
+  const { tasks, isLoading, error } = useAppSelector(
+    (state) => state.tasksReducer
+  );
   useEffect(() => {
     dispatch(fetchTasks());
   }, []);
@@ -33,18 +35,12 @@ function Tasks() {
             <div className='cardTasks'>
               <ul className='cardTasks__list'>
                 {isLoading && <h2> Идет загрузка </h2>}
-                {error && (
-                <h2>
-                  {error}
-                </h2>
-                )}
+                {error && <h2>{error}</h2>}
 
-                {Boolean(tasks.length) && tasks.map((item: TaskType) => (
-                  <TasksCard
-                    {...item}
-                    key={item.id}
-                  />
-                ))}
+                {Boolean(tasks.length) &&
+                  tasks.map((item: TaskType) => (
+                    <TasksCard {...item} key={item.id} />
+                  ))}
               </ul>
             </div>
           </div>

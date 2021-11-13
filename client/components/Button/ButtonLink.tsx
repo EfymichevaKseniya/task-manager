@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  CustomIcon,
-  IconType,
-} from '../Icon/Icon';
+import { CustomIcon, IconType } from '../Icon/Icon';
 import './button.scss';
 
 export type ButtonLinkType = {
@@ -24,13 +21,13 @@ export const ButtonLink: React.ComponentType<ButtonLinkType> = ({
   size = 'normal',
 }) => {
   return (
-    <Link to={`/${path}`} className={`btn btn__${size} btn--${color}`} onClick={onClick}>
-      {
-        icon && <CustomIcon {...icon} />
-      }
-      {
-        context ? <span className='btn-text'>{context}</span> : ''
-      }
+    <Link
+      to={`/${path}`}
+      className={`btn btn__${size} btn--${color}`}
+      onClick={onClick}
+    >
+      {icon && <CustomIcon {...icon} />}
+      {context ? <span className='btn-text'>{context}</span> : ''}
     </Link>
   );
 };

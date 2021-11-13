@@ -16,7 +16,7 @@
     margin-right: 3.5rem;
   }
 
-  & input[type=date] {
+  & input[type='date'] {
     &::-webkit-calendar-picker-indicator {
       opacity: 0;
     }
@@ -39,5 +39,7 @@
     margin-left: -5.5rem;
   }
 
-  & .icon--calendar { color: $blue; }
+  & .icon--calendar {
+    color: $blue;
+  }
 }

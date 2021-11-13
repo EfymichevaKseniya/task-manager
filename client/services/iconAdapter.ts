@@ -3,7 +3,7 @@ const changesIconService = (obj: {
   id: Id;
   name: string;
   width?: number;
-  height?: number
+  height?: number;
 }) => {
   return {
     id: obj.name,

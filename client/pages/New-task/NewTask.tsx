@@ -23,9 +23,7 @@ function NewTask() {
 
   const history = useHistory();
   // const datepicker = new AirDatepicker('#calendar', { dateFormat: 'yyyy-MM-dd' });
-  const {
-    handleSubmit, handleChange, values, errors,
-  } = useFormik({
+  const { handleSubmit, handleChange, values, errors } = useFormik({
     initialValues: {
       type: '',
       name: '',
@@ -37,15 +35,23 @@ function NewTask() {
     validationSchema: Yup.object({
       type: Yup.string().min(2, 'Поле видео не может быть пустым').required(),
       name: Yup.string().min(2, 'Заголовок не может быть пустым').required(),
-      description: Yup.string().min(2, 'Описание не может быть пустым').required(),
-      author: Yup.string().min(6, 'Поле инициатора не может быть пустым').required(),
-      executor: Yup.string().min(6, 'Поле ответственный не может быть пустым').required(),
-      dateExpired: Yup.string().min(6, 'Поле даты не может быть пустым').required(),
+      description: Yup.string()
+        .min(2, 'Описание не может быть пустым')
+        .required(),
+      author: Yup.string()
+        .min(6, 'Поле инициатора не может быть пустым')
+        .required(),
+      executor: Yup.string()
+        .min(6, 'Поле ответственный не может быть пустым')
+        .required(),
+      dateExpired: Yup.string()
+        .min(6, 'Поле даты не может быть пустым')
+        .required(),
     }),
-    onSubmit: ({
-      type, name, description, author, executor, dateExpired,
-    }) => {
-      console.log(`Type: ${type}, name: ${name}, author: ${author}, descr: ${description}, executor: ${executor}, date: ${dateExpired}`);
+    onSubmit: ({ type, name, description, author, executor, dateExpired }) => {
+      console.log(
+        `Type: ${type}, name: ${name}, author: ${author}, descr: ${description}, executor: ${executor}, date: ${dateExpired}`
+      );
       history.push('/tasks');
     },
   });
@@ -114,13 +120,23 @@ function NewTask() {
                   />
                   <Select
                     field={{
-                      id: 'author', placeholder: 'Выберите инициатора', content: 'Инициатор', value: `${values.author}`, icon: { id: 'arrow-down', width: 6, height: 4 }, error: errors.author,
+                      id: 'author',
+                      placeholder: 'Выберите инициатора',
+                      content: 'Инициатор',
+                      value: `${values.author}`,
+                      icon: { id: 'arrow-down', width: 6, height: 4 },
+                      error: errors.author,
                     }}
                     options={users.map((user) => user.name)}
                   />
                   <Select
                     field={{
-                      id: 'executor', placeholder: 'Выберите ответственного', content: 'Ответственный', value: `${values.executor}`, icon: { id: 'arrow-down', width: 6, height: 4 }, error: errors.executor,
+                      id: 'executor',
+                      placeholder: 'Выберите ответственного',
+                      content: 'Ответственный',
+                      value: `${values.executor}`,
+                      icon: { id: 'arrow-down', width: 6, height: 4 },
+                      error: errors.executor,
                     }}
                     options={users.map((user) => user.name)}
                   />

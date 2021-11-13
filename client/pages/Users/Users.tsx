@@ -9,7 +9,9 @@ import UsersCards from './components/UsersCards';
 
 function Tasks() {
   const dispatch = useAppDispatch();
-  const { users, isLoading, error } = useAppSelector((state) => state.usersReducer);
+  const { users, isLoading, error } = useAppSelector(
+    (state) => state.usersReducer
+  );
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
@@ -31,17 +33,9 @@ function Tasks() {
             </div>
             <ul className='users__list'>
               {isLoading && <h2> Идет загрузка </h2>}
-              {error && (
-                <h2>
-                  {error}
-                </h2>
-              )}
-              {Boolean(users.length) && users.map((item) => (
-                <UsersCards
-                  {...item}
-                  key={item.id}
-                />
-              ))}
+              {error && <h2>{error}</h2>}
+              {Boolean(users.length) &&
+                users.map((item) => <UsersCards {...item} key={item.id} />)}
             </ul>
           </div>
         </div>

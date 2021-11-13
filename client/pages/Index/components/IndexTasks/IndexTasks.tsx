@@ -12,22 +12,18 @@ const IndexTasksCard: React.FC<{
       <figure className='card__item-wrapper'>
         <img className='card__item-img' src={cards.preview} alt={cards.name} />
         <figcaption className='card-descr'>
-          <a className='card__item-title' href='task.html' onClick={(e) => e.preventDefault()}>
-            <Content
-              type={
-                cards.type
-              }
-            />
+          <a
+            className='card__item-title'
+            href='task.html'
+            onClick={(e) => e.preventDefault()}
+          >
+            <Content type={cards.type} />
           </a>
-          <p className='card__item-descr'>
-            {cards.name}
-          </p>
+          <p className='card__item-descr'>{cards.name}</p>
           <div className='card__item-meta'>
-            <span className='card__item-author'>
-              {cards.author.name}
-            </span>
+            <span className='card__item-author'>{cards.author.name}</span>
             <time className='card__item-date' dateTime={cards.dateCreated}>
-              {(new Date(cards.dateCreated)).toLocaleString()}
+              {new Date(cards.dateCreated).toLocaleString()}
             </time>
           </div>
         </figcaption>

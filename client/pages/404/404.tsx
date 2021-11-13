@@ -12,9 +12,15 @@ function PageNotFound() {
       <div className='main'>
         <div className='container'>
           <div className='page__notFound'>
-            <img className='page__notFound-img' src={PageNotFoundImg} alt='ошибка 404' />
+            <img
+              className='page__notFound-img'
+              src={PageNotFoundImg}
+              alt='ошибка 404'
+            />
             <h3 className='page__notFound-title'>Потерялись?</h3>
-            <span className='page__notFound-description'>Страница, которую вы ищите не существует, либо была удалена</span>
+            <span className='page__notFound-description'>
+              Страница, которую вы ищите не существует, либо была удалена
+            </span>
             <ButtonLink
               context='На главную'
               icon={{ id: 'home', width: 18, height: 18 }}

@@ -13,7 +13,9 @@
     top: 35%;
     cursor: pointer;
 
-    &:hover { fill: $blue; }
+    &:hover {
+      fill: $blue;
+    }
   }
 
   &--publish {
@@ -26,15 +28,23 @@
     height: 1.4rem;
   }
 
-  &--video { fill: $blue; }
+  &--video {
+    fill: $blue;
+  }
 
-  &--photo { fill: $green; }
+  &--photo {
+    fill: $green;
+  }
 
-  &--audio { fill: $yellow-audio; }
+  &--audio {
+    fill: $yellow-audio;
+  }
 
   &--video-white,
   &--audio-white,
-  &--photo-white { fill: $white; }
+  &--photo-white {
+    fill: $white;
+  }
 
   &--edit {
     width: 2rem;

@@ -4,7 +4,7 @@ import { InputIcon } from '../Input/InputWithIcon';
 import { SelectStatus } from '../Select/SelectStatus';
 import './filter.scss';
 
-const FilterTasks: React.FC <unknown> = () => {
+const FilterTasks: React.FC<unknown> = () => {
   return (
     <form className='filter filter__tasks'>
       <InputIcon

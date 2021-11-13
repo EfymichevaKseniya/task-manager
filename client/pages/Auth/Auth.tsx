@@ -10,15 +10,15 @@ import './auth.scss';
 
 const Login = () => {
   const history = useHistory();
-  const {
-    handleSubmit, handleChange, values, touched, errors,
-  } = useFormik({
+  const { handleSubmit, handleChange, values, touched, errors } = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
     validationSchema: Yup.object({
-      password: Yup.string().min(6, 'Password should be longer than 6 characters').required(),
+      password: Yup.string()
+        .min(6, 'Password should be longer than 6 characters')
+        .required(),
     }),
     onSubmit: ({ email, password }) => {
       console.log(`E-mail: ${email}, password: ${password}`);

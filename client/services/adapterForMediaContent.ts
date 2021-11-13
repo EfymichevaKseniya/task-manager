@@ -1,10 +1,7 @@
 import { contentType } from '../domain/contentType';
 
 // input adapter
-const serviceAdapter = (obj: {
-  id: Id;
-  name: string;
-}) => ({
+const serviceAdapter = (obj: { id: Id; name: string }) => ({
   ...obj,
   text: contentType[obj.name],
 });

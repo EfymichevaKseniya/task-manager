@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Switch, Redirect } from 'react-router-dom';
 import routes from './routeConfig';
 import './App.scss';
 import RouteWithSubRoutes from './services/RoutesWithSubRoutes';

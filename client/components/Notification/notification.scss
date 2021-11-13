@@ -10,10 +10,14 @@
 
     @include outline(1px, transparent, 4px);
 
-    &:focus { background: $blue-outline; }
+    &:focus {
+      background: $blue-outline;
+    }
 
     &:hover,
-    &:focus { @include outline(1px, $blue-outline, 4px); }
+    &:focus {
+      @include outline(1px, $blue-outline, 4px);
+    }
 
     &-number {
       padding: 0.1rem 0.3rem;

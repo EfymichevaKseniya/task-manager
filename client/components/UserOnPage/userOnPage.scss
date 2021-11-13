@@ -31,13 +31,16 @@
       content: '';
       width: 0.6rem;
       height: 0.4rem;
-      background: url('../../../public/img/icons/arrow-down.svg') no-repeat center;
+      background: url('../../../public/img/icons/arrow-down.svg') no-repeat
+        center;
       position: absolute;
       top: 50%;
       right: -1rem;
     }
 
-    &:focus .user__avatar { @include outline(1px, $blue, 50%); }
+    &:focus .user__avatar {
+      @include outline(1px, $blue, 50%);
+    }
   }
 }
 

@@ -10,10 +10,10 @@ const RootReducer = combineReducers({
   contentsReducer,
 });
 
-const setupStore = () => configureStore({
-  reducer: RootReducer,
-
-});
+const setupStore = () =>
+  configureStore({
+    reducer: RootReducer,
+  });
 
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

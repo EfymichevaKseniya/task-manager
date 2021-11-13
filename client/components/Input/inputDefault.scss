@@ -6,7 +6,7 @@
   position: relative;
   outline: none;
 
-  & input[type=date] {
+  & input[type='date'] {
     &::-webkit-calendar-picker-indicator {
       display: none;
     }
@@ -65,7 +65,9 @@
       cursor: pointer;
     }
 
-    &:focus { @include outline(1px, $blue, 4px); }
+    &:focus {
+      @include outline(1px, $blue, 4px);
+    }
   }
 
   &__button {
@@ -97,13 +99,17 @@
       transition: rotate 0.3s ease-in-out;
     }
 
-    &:hover { border-color: $gray-blue-icon; }
+    &:hover {
+      border-color: $gray-blue-icon;
+    }
 
     &:focus {
       border-color: $blue;
     }
 
-    &--error { border-color: $red; }
+    &--error {
+      border-color: $red;
+    }
 
     &--search-normal {
       width: 39.4rem;

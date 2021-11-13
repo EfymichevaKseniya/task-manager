@@ -7,7 +7,7 @@ export type InputFileType = {
   context?: string;
   onClick: VoidFunction;
   value?: string;
-  onChange?: VoidFunction
+  onChange?: VoidFunction;
 };
 
 export const InputFile: React.ComponentType<InputFileType> = ({
@@ -19,12 +19,17 @@ export const InputFile: React.ComponentType<InputFileType> = ({
 }) => {
   return (
     <label className='upload__btn' onClick={onClick} htmlFor={icon.id}>
-      <input className='upload__input' name={icon.id} type='file' id={icon.id} value={value} onChange={onChange} />
+      <input
+        className='upload__input'
+        name={icon.id}
+        type='file'
+        id={icon.id}
+        value={value}
+        onChange={onChange}
+      />
       <div className='upload__input-wrapper'>
         <CustomIcon {...icon} />
-        {
-          context && <span className='upload__text'>{context}</span>
-        }
+        {context && <span className='upload__text'>{context}</span>}
       </div>
     </label>
   );

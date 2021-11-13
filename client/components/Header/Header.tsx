@@ -10,7 +10,7 @@ const userAvatar = require('../../../public/img/profile-photo.png');
 
 // const currentUser: UserType = JSON.parse(sessionStorage.getItem('user'));
 
-const Header: React.FC <unknown> = () => {
+const Header: React.FC<unknown> = () => {
   return (
     <div className='header'>
       <div className='header__container container'>

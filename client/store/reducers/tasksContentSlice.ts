@@ -3,9 +3,9 @@ import { IndexTaskType } from '../../domain/task';
 import fetchTasksContent from '../actions/ActionCreatorsContent';
 
 interface TaskContentState {
-  contents: IndexTaskType[],
-  isLoading: boolean,
-  error: string,
+  contents: IndexTaskType[];
+  isLoading: boolean;
+  error: string;
 }
 
 const initialState: TaskContentState = {
@@ -19,7 +19,10 @@ const tasksContentSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchTasksContent.fulfilled.type]: (state, action: PayloadAction<IndexTaskType[]>) => {
+    [fetchTasksContent.fulfilled.type]: (
+      state,
+      action: PayloadAction<IndexTaskType[]>
+    ) => {
       state.isLoading = false;
       state.error = '';
       state.contents = action.payload;
@@ -27,7 +30,10 @@ const tasksContentSlice = createSlice({
     [fetchTasksContent.pending.type]: (state) => {
       state.isLoading = true;
     },
-    [fetchTasksContent.rejected.type]: (state, action: PayloadAction<string>) => {
+    [fetchTasksContent.rejected.type]: (
+      state,
+      action: PayloadAction<string>
+    ) => {
       state.isLoading = false;
       state.error = action.payload;
     },

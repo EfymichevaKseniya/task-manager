@@ -1,7 +1,5 @@
 import React from 'react';
-import {
-  Route,
-} from 'react-router-dom';
+import { Route } from 'react-router-dom';
 // import routes from '../routeConfig';
 
 export default function RouteWithSubRoutes(route: any) {

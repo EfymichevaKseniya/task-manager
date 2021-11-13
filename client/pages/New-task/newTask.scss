@@ -2,16 +2,22 @@
 
 .new-task {
   & .btn--transparent {
-    & .btn-text { color: $blue; }
+    & .btn-text {
+      color: $blue;
+    }
 
-    & .icon--back { fill: $blue; }
+    & .icon--back {
+      fill: $blue;
+    }
   }
 
   & .btn-wrapper {
     display: inline-block;
 
     & .btn--blue,
-    & .btn--transparent { margin-left: 2rem; }
+    & .btn--transparent {
+      margin-left: 2rem;
+    }
   }
 
   &__form {
@@ -37,7 +43,7 @@
       margin-bottom: 4rem;
     }
 
-    & input[type=textarea] {
+    & input[type='textarea'] {
       height: 11rem;
     }
   }
@@ -63,7 +69,9 @@
           width: 33.4rem;
         }
 
-        & .input-text { width: 100%; }
+        & .input-text {
+          width: 100%;
+        }
       }
     }
 
@@ -75,7 +83,7 @@
       width: 100%;
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -84,7 +92,9 @@
         height: 1px;
       }
 
-      &:not(:first-child) { margin-top: 2rem; }
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
 
       &-descr {
         @include font(1.4rem, 400, 2.1rem);

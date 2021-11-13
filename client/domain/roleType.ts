@@ -1,4 +1,4 @@
-export type RoleType = { [key:string]:string };
+export type RoleType = { [key: string]: string };
 
 export const roleType: RoleType = {
   admin: 'Администратор',
@@ -6,6 +6,6 @@ export const roleType: RoleType = {
   contentMaker: 'Контент-мэйкер',
 };
 
-export const IsAdmin = (val:string) => val === 'admin';
-export const IsManager = (val:string) => val === 'manager';
-export const IsContentMaker = (val:string) => val === 'contentMaker';
+export const IsAdmin = (val: string) => val === 'admin';
+export const IsManager = (val: string) => val === 'manager';
+export const IsContentMaker = (val: string) => val === 'contentMaker';

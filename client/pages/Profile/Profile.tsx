@@ -11,7 +11,7 @@ function Profile() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result: any = await (api.get('/users').then((data) => data));
+      const result: any = await api.get('/users').then((data) => data);
       setProfile(result.users);
     };
     fetchData();
@@ -24,9 +24,7 @@ function Profile() {
         <div className='container'>
           <div className='profile'>
             <div className='profile__wrapper'>
-              <UserAvatar
-                avatar={profile.avatar}
-              />
+              <UserAvatar avatar={profile.avatar} />
               <div className='profile__fields'>
                 <Input
                   id='5632'

@@ -37,13 +37,17 @@
     &:hover {
       background: $blue-btn-hover;
 
-      & .upload__text { color: $white; }
+      & .upload__text {
+        color: $white;
+      }
     }
 
     &:focus {
       background: $blue-btn-active;
 
-      & .upload__text { color: $white; }
+      & .upload__text {
+        color: $white;
+      }
     }
   }
 }

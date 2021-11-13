@@ -3,7 +3,7 @@ import { InputCheckbox } from '../Input/InputCheckbox';
 import { InputIcon } from '../Input/InputWithIcon';
 import './filter.scss';
 
-const FilterUsers: React.FC <unknown> = () => {
+const FilterUsers: React.FC<unknown> = () => {
   return (
     <form className='filter filter__tasks'>
       <InputIcon

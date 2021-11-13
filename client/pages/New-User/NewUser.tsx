@@ -18,27 +18,28 @@ const NewUser = () => {
   const dispatch = useAppDispatch();
   // const { users, isLoading, error } = useAppSelector((state) => state.usersReducer);
   const history = useHistory();
-  const {
-    handleSubmit, handleChange, values, touched, errors, setFieldValue,
-  } = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      role: '',
-      password: '',
-      avatar: '',
-    },
-    validationSchema: Yup.object({
-      email: Yup.string().min(2, 'Поле не может быть пустым').required(),
-      name: Yup.string().min(2, 'Поле не может быть пустым').required(),
-      password: Yup.string().min(6, 'пароль не может быть меньше 6 символов').required(),
-    }),
-    onSubmit: (data) => {
-      dispatch(addNewUser(data));
-      console.log(data);
-      history.push('/users');
-    },
-  });
+  const { handleSubmit, handleChange, values, touched, errors, setFieldValue } =
+    useFormik({
+      initialValues: {
+        name: '',
+        email: '',
+        role: '',
+        password: '',
+        avatar: '',
+      },
+      validationSchema: Yup.object({
+        email: Yup.string().min(2, 'Поле не может быть пустым').required(),
+        name: Yup.string().min(2, 'Поле не может быть пустым').required(),
+        password: Yup.string()
+          .min(6, 'пароль не может быть меньше 6 символов')
+          .required(),
+      }),
+      onSubmit: (data) => {
+        dispatch(addNewUser(data));
+        console.log(data);
+        history.push('/users');
+      },
+    });
 
   const selectChooseHandler = (role: string) => {
     setFieldValue('role', role);
@@ -60,7 +61,11 @@ const NewUser = () => {
           <form className='new-user__form' onSubmit={handleSubmit}>
             <div className='new-user__form-wrapper'>
               <div className='new-user__form-avatar'>
-                <img className='new-user__form-avatar-img' src={avatarSrc} alt='изображение пользователя' />
+                <img
+                  className='new-user__form-avatar-img'
+                  src={avatarSrc}
+                  alt='изображение пользователя'
+                />
                 <InputFile
                   icon={{ id: 'upload' }}
                   onClick={() => {}}

@@ -3,9 +3,9 @@ import { UserType } from '../../domain/user';
 import fetchUsers, { addNewUser } from '../actions/ActionCreatorsUsers';
 
 interface UserState {
-  users: UserType[],
-  isLoading?: boolean,
-  error?: string,
+  users: UserType[];
+  isLoading?: boolean;
+  error?: string;
 }
 
 const initialState: UserState = {

@@ -26,7 +26,7 @@ module.exports = {
           loader: 'ts-loader',
           options: {
             transpileOnly: true,
-          }
+          },
         },
       },
       {
@@ -53,8 +53,8 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
-            }
-          }
+            },
+          },
         ],
       },
       /** fonts */
@@ -92,4 +92,3 @@ module.exports = {
     new ESLintPlugin(),
   ],
 };
-

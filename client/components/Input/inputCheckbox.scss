@@ -8,7 +8,9 @@
     display: flex;
     padding-top: 4rem;
 
-    &-tags { position: relative; }
+    &-tags {
+      position: relative;
+    }
   }
 
   &__input {
@@ -44,30 +46,42 @@
 
       @include outline(1px, $blue, 4px);
 
-      &:hover { background: rgba($blue, 0.1); }
+      &:hover {
+        background: rgba($blue, 0.1);
+      }
 
-      & input[type=checkbox]:checked + span {
+      & input[type='checkbox']:checked + span {
         background: $blue;
 
-        &.checkbox__text { color: $white; }
+        &.checkbox__text {
+          color: $white;
+        }
       }
     }
 
-    &:not(:first-child) { margin-left: 1rem; }
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
 
     &--video {
       color: $blue;
 
       @include outline(1px, $blue, 4px);
 
-      &:hover { background: rgba($blue, 0.1); }
+      &:hover {
+        background: rgba($blue, 0.1);
+      }
 
-      & input[type=checkbox]:checked + .content {
+      & input[type='checkbox']:checked + .content {
         background: $blue;
 
-        & .content__box-text { color: $white; }
+        & .content__box-text {
+          color: $white;
+        }
 
-        & .icon--video { fill: $white; }
+        & .icon--video {
+          fill: $white;
+        }
       }
     }
 
@@ -76,14 +90,20 @@
 
       @include outline(1px, $yellow-audio, 4px);
 
-      &:hover { background: rgba($yellow-audio, 0.1); }
+      &:hover {
+        background: rgba($yellow-audio, 0.1);
+      }
 
-      & input[type=checkbox]:checked + .content {
+      & input[type='checkbox']:checked + .content {
         background: $yellow-audio;
 
-        & .content__box-text { color: $white; }
+        & .content__box-text {
+          color: $white;
+        }
 
-        & .icon--audio { fill: $white; }
+        & .icon--audio {
+          fill: $white;
+        }
       }
     }
 
@@ -92,17 +112,25 @@
 
       @include outline(1px, $green, 4px);
 
-      &:hover { background: rgba($gray-line, 0.1); }
+      &:hover {
+        background: rgba($gray-line, 0.1);
+      }
 
-      & input[type=checkbox]:checked + .content {
+      & input[type='checkbox']:checked + .content {
         background: $green;
 
-        & .content__box-text { color: $white; }
+        & .content__box-text {
+          color: $white;
+        }
 
-        & .icon--photo { fill: $white; }
+        & .icon--photo {
+          fill: $white;
+        }
       }
     }
   }
 }
 
-.filter-hide { display: none; }
+.filter-hide {
+  display: none;
+}

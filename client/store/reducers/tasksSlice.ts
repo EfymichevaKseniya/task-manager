@@ -3,9 +3,9 @@ import { TaskType } from '../../domain/task';
 import fetchTasks from '../actions/ActionCreatorsTasks';
 
 interface TaskState {
-  tasks: TaskType[],
-  isLoading: boolean,
-  error: string,
+  tasks: TaskType[];
+  isLoading: boolean;
+  error: string;
 }
 
 const initialState: TaskState = {

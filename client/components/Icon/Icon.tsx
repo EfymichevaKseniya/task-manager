@@ -21,9 +21,7 @@ export const CustomIcon: React.ComponentType<IconType> = ({
       style={{ width: width ?? '', height: height ?? '' }}
     >
       <use xlinkHref={`${iconSvg}#${id}`} />
-      {
-        idAdd && <use className='hidden' xlinkHref={`${iconSvg}#${idAdd}`} />
-      }
+      {idAdd && <use className='hidden' xlinkHref={`${iconSvg}#${idAdd}`} />}
     </svg>
   );
 };

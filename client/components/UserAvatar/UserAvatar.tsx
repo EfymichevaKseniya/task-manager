@@ -6,12 +6,14 @@ export type UserAvatarType = {
   avatar: string;
 };
 
-export const UserAvatar: React.ComponentType<UserAvatarType> = ({
-  avatar,
-}) => {
+export const UserAvatar: React.ComponentType<UserAvatarType> = ({ avatar }) => {
   return (
     <div className='userAvatar'>
-      <img className='userAvatar-img' src={avatar} alt='изображение пользователя' />
+      <img
+        className='userAvatar-img'
+        src={avatar}
+        alt='изображение пользователя'
+      />
       <InputFile
         icon={{ id: 'upload' }}
         context='Загрузить аватар'

@@ -10,7 +10,7 @@ export type RoutesType = {
   routes: {
     path: string;
     component: () => JSX.Element;
-  }
+  };
 };
 
 const routes = [

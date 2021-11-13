@@ -41,6 +41,7 @@
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -75,20 +76,17 @@
     "start": "webpack serve  --mode development --config webpack/dev.js",
     "server": "json-server --watch db.json --port 5000",
     "build": "webpack --mode production --config webpack/prod.js",
-    "prepare-husky": "npx husky-init && npm install",
+    "prepare-husky": "npx husky-init && npm install && husky set .husky/pre-commit 'node_modules/.bin/lint-staged'",
+    "prettier-all": "prettier --write .",
     "eslint": "eslint ./client/**/*.{ts,tsx}",
     "prepare": "husky install"
   },
   "keywords": [],
   "lint-staged": {
     "*": [
-      "run-scripts eslint"
+      "echo PRETTIER**********************",
+      "npm run prettier-all"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo 123"
-    }
   },
   "author": "Efimycheva Kseniia",
   "license": "ISC"

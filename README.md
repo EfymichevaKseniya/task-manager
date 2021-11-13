@@ -29,13 +29,14 @@ npm run clean
 # Зависимости:
 
 ## Webpack
+
 - webpack - Сборщик модулей
 - webpack-cli - Интерфейс командной строки для webpack
 - webpack-dev-server - Сервер разработки для webpack
 - webpack-merge - Упрощение настройки конфигурации для разработки/продакшена
 
-
 ## Loaders
+
 - ts-loader - Преобразует файлы ts с в js и Webpack
 - sass-loader - Загружает SCSS и компилирует в CSS
 - node-sass - Библиотека, которая обеспечивает привязку Node
@@ -44,7 +45,9 @@ npm run clean
 - html-loader - Экспортирует HTML как строку и минимизирует, когда этого требует компилятор.
 - pug - шаблонизатор Html
 - pug-html-loader - преобразует pug файлы в html
+
 ## Plugins
+
 - html-webpack-plugin - Создает HTML файлы из шаблона
 - mini-css-extract-plugin - Извлекает CSS в отдельные файлы
 - css-minimizer-webpack-plugin - Оптимизирует и минифицирует CSS
@@ -55,6 +58,7 @@ npm run clean
 - resolve-url-loader - Преобразует пути до файлов
 
 ## Linters
+
 - eslint - Применяет руководства по стилю в приложении
 - eslint-config-airbnb-base - Базовое руководство по стилю для обеспечения соблюдения правил
 - eslint-plugin-import - Осуществляет правила импорта

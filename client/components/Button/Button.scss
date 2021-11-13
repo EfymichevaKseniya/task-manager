@@ -12,8 +12,12 @@
     display: flex;
     justify-content: space-between;
 
-    &--one { justify-content: flex-end; }
-    &--add { display: flex; }
+    &--one {
+      justify-content: flex-end;
+    }
+    &--add {
+      display: flex;
+    }
   }
 
   &__small {
@@ -23,43 +27,67 @@
   &--blue {
     background: $blue;
 
-    &:hover { background: $blue-btn-hover; }
+    &:hover {
+      background: $blue-btn-hover;
+    }
 
     &--active,
-    &:focus { background: $blue-btn-active; }
+    &:focus {
+      background: $blue-btn-active;
+    }
 
-    &:disabled { background: rgba($blue, 0.5); }
+    &:disabled {
+      background: rgba($blue, 0.5);
+    }
   }
 
   &--green {
     background: $green;
 
-    &:hover { background: $green-hover; }
+    &:hover {
+      background: $green-hover;
+    }
 
     &--active,
-    &:focus { background: $green-active; }
+    &:focus {
+      background: $green-active;
+    }
 
-    &:disabled { background: rgba($green, 0.5); }
+    &:disabled {
+      background: rgba($green, 0.5);
+    }
   }
 
   &--transparent {
-    &:hover { background: $itblue; }
+    &:hover {
+      background: $itblue;
+    }
 
     &--active,
-    &:focus { background: $itblue-active; }
+    &:focus {
+      background: $itblue-active;
+    }
 
-    &:disabled { opacity: 0.3; }
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 
   &--red {
     margin-left: 3rem;
 
-    &:hover { background: $red-hover; }
+    &:hover {
+      background: $red-hover;
+    }
 
     &--active,
-    &:focus { background: $red-active; }
+    &:focus {
+      background: $red-active;
+    }
 
-    &:disabled { opacity: 0.3; }
+    &:disabled {
+      opacity: 0.3;
+    }
   }
 
   &--edit,
@@ -67,12 +95,18 @@
     padding: 1rem;
     background: $blue;
 
-    &:hover { background: $blue-btn-hover; }
+    &:hover {
+      background: $blue-btn-hover;
+    }
 
     &--active,
-    &:focus { background: $blue-btn-active; }
+    &:focus {
+      background: $blue-btn-active;
+    }
 
-    &:disabled { background: rgba($blue, 0.5); }
+    &:disabled {
+      background: rgba($blue, 0.5);
+    }
   }
 
   // &--delete-small {
@@ -96,22 +130,34 @@
   }
 
   &--edit-small {
-    &:hover .icon--edit-small { fill: $white; }
+    &:hover .icon--edit-small {
+      fill: $white;
+    }
 
-    &:focus .icon--edit-small { fill: $white; }
+    &:focus .icon--edit-small {
+      fill: $white;
+    }
 
-    &:disabled .icon--edit-small { fill: rgba($blue, 0.3); }
+    &:disabled .icon--edit-small {
+      fill: rgba($blue, 0.3);
+    }
   }
 
   &--primary {
     background: $itblue;
 
-    &:hover { background: $blue-btn-hover; }
+    &:hover {
+      background: $blue-btn-hover;
+    }
 
     &--active,
-    &:focus { background: $blue-btn-active; }
+    &:focus {
+      background: $blue-btn-active;
+    }
 
-    &:disabled { background: rgba($itblue, 0.3); }
+    &:disabled {
+      background: rgba($itblue, 0.3);
+    }
 
     & .icon--edit {
       fill: $blue;
@@ -135,12 +181,18 @@
     padding: 0.7rem;
     background: $itblue;
 
-    &:hover { background: $blue-btn-hover; }
+    &:hover {
+      background: $blue-btn-hover;
+    }
 
     &--active,
-    &:focus { background: $blue-btn-active; }
+    &:focus {
+      background: $blue-btn-active;
+    }
 
-    &:disabled { background: rgba($itblue, 0.3); }
+    &:disabled {
+      background: rgba($itblue, 0.3);
+    }
   }
 
   &-text {
@@ -155,12 +207,16 @@
       color: $blue;
     }
 
-    &--transparent.icon #back { fill: $blue; }
+    &--transparent.icon #back {
+      fill: $blue;
+    }
 
     &--red {
       color: $red;
     }
   }
 
-  &--download:hover .btn__kit-text--download { color: $white; }
+  &--download:hover .btn__kit-text--download {
+    color: $white;
+  }
 }
