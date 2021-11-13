@@ -78,12 +78,12 @@
     "build": "webpack --mode production --config webpack/prod.js",
     "prepare-husky": "npx husky-init && npm install",
     "eslint": "eslint ./client/**/*.{ts,tsx}",
-    "prepare": "husky install"
+    "prepare": "husky install asd"
   },
   "keywords": [],
   "husky": {
     "hooks": {
-      "pre-commit": "npm run eslint"
+      "pre-commit": "echo 123"
     }
   },
   "author": "Efimycheva Kseniia",
