@@ -5,3 +5,4 @@ webpack/
 .gitignore
 .prettierignore
 package.json
+*.json
