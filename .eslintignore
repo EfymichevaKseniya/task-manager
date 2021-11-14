@@ -4,5 +4,7 @@ webpack/
 .eslintignore
 .gitignore
 .prettierignore
+*.md
+package-lock.json
 package.json
 *.json

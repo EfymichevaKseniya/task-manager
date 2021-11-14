@@ -1,5 +1,10 @@
-/.husky
-/.eslint
-/.eslintignore
-/.gitignore
-/.prettierignore
+webpack/
+.husky
+.eslint
+.eslintignore
+.gitignore
+.prettierignore
+*.md
+package-lock.json
+package.json
+*.json

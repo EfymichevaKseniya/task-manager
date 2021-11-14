@@ -57,7 +57,6 @@
     "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "resolve-url-loader": "^4.0.0",
-    "run-scripts": "^0.4.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "stylelint": "^13.13.1",
@@ -79,13 +78,11 @@
     "build": "webpack --mode production --config webpack/prod.js",
     "prepare-husky": "npx husky-init && npm install && husky set .husky/pre-commit 'node_modules/.bin/lint-staged'",
     "prettier-all": "prettier --write . --ignore-path ./.prettierignore",
-    "eslint": "eslint --quiet ./client/*.{ts,tsx} ./client/**/*.{ts,tsx} --ignore-path ./.eslintignore",
-    "prepare": "husky install"
+    "eslint": "eslint --quiet ./client/*.{ts,tsx} ./client/**/*.{ts,tsx} --ignore-path ./.eslintignore"
   },
   "keywords": [],
   "lint-staged": {
     "*": [
-      "echo PRETTIER**********************",
       "npm run prettier-all",
       "npm run eslint"
     ]
