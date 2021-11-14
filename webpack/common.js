@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const StylelintPlugin = require('stylelint-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const paths = require('./path');
@@ -88,7 +87,6 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
     }),
-    new StylelintPlugin(),
     new ESLintPlugin(),
   ],
 };
