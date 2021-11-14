@@ -78,7 +78,8 @@
     "build": "webpack --mode production --config webpack/prod.js",
     "prepare-husky": "npx husky-init && npm install && husky set .husky/pre-commit 'node_modules/.bin/lint-staged'",
     "prettier-all": "prettier --write . --ignore-path ./.prettierignore",
-    "eslint": "eslint --quiet ./client/*.{ts,tsx} ./client/**/*.{ts,tsx} --ignore-path ./.eslintignore"
+    "eslint": "eslint --quiet ./client/*.{ts,tsx} ./client/**/*.{ts,tsx} --ignore-path ./.eslintignore",
+    "prepare": "husky install"
   },
   "keywords": [],
   "lint-staged": {
