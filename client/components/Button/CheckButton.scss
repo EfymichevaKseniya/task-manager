@@ -15,10 +15,7 @@
 
   &__input {
     z-index: -1;
-    opacity: 0;
-    display: none;
-    width: 0;
-    height: 0;
+    position: absolute;
   }
 
   &__label {
@@ -37,6 +34,7 @@
   &__btn {
     background: $white;
     cursor: pointer;
+    position: relative;
 
     &--contentMaker,
     &--all,

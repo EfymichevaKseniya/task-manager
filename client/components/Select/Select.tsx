@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { UserType } from '../../store/models/IUser';
-import { InputTypeWithIcon, InputIcon } from '../Input/InputWithIcon';
+import { InputTypeWithIcon, InputIcon } from '../FormElements/InputWithIcon';
 import './select.scss';
 
 export type SelectType = {

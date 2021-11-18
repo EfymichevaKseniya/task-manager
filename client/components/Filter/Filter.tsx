@@ -1,30 +1,52 @@
-import React from 'react';
-import { InputCheckbox } from '../Input/InputCheckbox';
-import { InputIcon } from '../Input/InputWithIcon';
+import React, { useState } from 'react';
+import { CheckButton } from '../Button/CheckButton';
+import { InputSearch } from '../FormElements/InputSearch';
+import DatePicker from '../Input/DatepickerInput';
 import './filter.scss';
 
 const Filter: React.FC<unknown> = () => {
+  const [isActive, setActive] = useState(false);
+  const handleChange = () => {
+    setActive(!isActive);
+  };
   return (
     <form className='filter'>
-      <InputIcon
-        id='search'
-        content='Поиск'
-        placeholder='Введите название имя исполнителя'
-        icon={{
+      <InputSearch
+        inputIcon={{
           id: 'search',
-          idAdd: 'close',
+          content: 'Поиск',
+          placeholder: 'Введите название имя исполнителя',
+          icon: {
+            id: 'search',
+          },
+          type: 'search',
         }}
-        type='search'
+        icon={{
+          id: 'close',
+          width: 10,
+          height: 10,
+        }}
       />
-      <InputIcon
-        id='calendar'
-        content='Дата публикации'
-        placeholder='Укажите дату публикации'
-        icon={{ id: 'calendar' }}
-        type='date'
+      <DatePicker
+        props={{
+          content: 'Дата публикации',
+          id: 'calendar',
+          placeholder: 'Укажите дату',
+          type: 'date',
+          icon: {
+            id: 'calendar',
+            width: 16,
+            height: 16,
+          },
+        }}
+        // icon={{
+        //   id: 'calendar',
+        //   width: 10,
+        //   height: 10,
+        // }}
       />
-      <div className='filter__btns' id='filter__btns'>
-        <InputCheckbox
+      <div className='filter__btns'>
+        <CheckButton
           modification='video'
           type={{
             type: {
@@ -34,9 +56,10 @@ const Filter: React.FC<unknown> = () => {
               height: 10,
             },
           }}
-          onClick={() => {}}
+          checked={isActive}
+          onChange={handleChange}
         />
-        <InputCheckbox
+        <CheckButton
           type={{
             type: {
               id: 'photo',
@@ -46,9 +69,10 @@ const Filter: React.FC<unknown> = () => {
             },
           }}
           modification='photo'
-          onClick={() => {}}
+          checked={isActive}
+          onChange={handleChange}
         />
-        <InputCheckbox
+        <CheckButton
           type={{
             type: {
               id: 'audio',
@@ -58,7 +82,8 @@ const Filter: React.FC<unknown> = () => {
             },
           }}
           modification='audio'
-          onClick={() => {}}
+          checked={isActive}
+          onChange={handleChange}
         />
         <span className='filter__btns-label input__label'>Тип контента</span>
       </div>

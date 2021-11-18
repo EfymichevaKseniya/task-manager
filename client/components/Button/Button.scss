@@ -1,4 +1,4 @@
-@import '../../styles/colors.scss';
+@import '../../styles/colors';
 
 .btn {
   padding: 1.2rem 1.5rem;
@@ -108,16 +108,6 @@
       background: rgba($blue, 0.5);
     }
   }
-
-  // &--delete-small {
-  //   &:focus .icon--delete-small {
-  //     stroke: $white;
-  //   }
-
-  //   &:hover .icon--delete-small {
-  //     stroke: $white;
-  //   }
-  // }
 
   &--download {
     &:focus .icon--download {

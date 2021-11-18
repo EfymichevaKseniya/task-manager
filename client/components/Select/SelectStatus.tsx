@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CustomIcon, IconType } from '../Icon/Icon';
-import { InputTypeWithIcon, InputIcon } from '../Input/InputWithIcon';
+import { InputTypeWithIcon, InputIcon } from '../FormElements/InputWithIcon';
 import './select.scss';
 
 export type SelectStatusType = {

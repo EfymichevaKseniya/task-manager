@@ -1,16 +1,9 @@
 @import '../../styles/colors.scss';
 
 .icon {
-  width: 0.9rem;
-  height: 0.9rem;
-
   &--close {
     fill: $gray-blue-icon;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    right: 20px;
-    top: 35%;
+    opacity: 1;
     cursor: pointer;
 
     &:hover {
@@ -137,9 +130,9 @@
     margin-left: -3rem;
   }
 
-  &--arrow-down {
-    z-index: 2;
-  }
+  // &--arrow-down {
+  //   z-index: 2;
+  // }
 
   &--red {
     width: 1.3rem;

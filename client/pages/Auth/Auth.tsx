@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { Input } from '../../components/Input/InputDefault';
+import { Input } from '../../components/FormElements/InputDefault';
 import { Button } from '../../components/Button/Button';
 import Logo from '../../components/Logo/Logo';
 
@@ -12,12 +12,13 @@ const Login = () => {
   const history = useHistory();
   const { handleSubmit, handleChange, values, touched, errors } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: 'das@gdfg.yjyut',
+      password: 'trgfhf65',
     },
     validationSchema: Yup.object({
+      email: Yup.string().required(),
       password: Yup.string()
-        .min(6, 'Password should be longer than 6 characters')
+        .min(6, 'Пароль должен содержать не менее 6 символов')
         .required(),
     }),
     onSubmit: ({ email, password }) => {
@@ -40,6 +41,8 @@ const Login = () => {
               type='email'
               value={values.email}
               onChange={handleChange}
+              error={errors.email}
+              touched={touched.email}
             />
             <Input
               id='password'
@@ -48,10 +51,12 @@ const Login = () => {
               type='password'
               value={values.password}
               onChange={handleChange}
+              error={errors.password}
+              touched={touched.password}
             />
-            {touched.password && errors.password ? (
+            {/* {touched.password && errors.password ? (
               <div>{errors.password}</div>
-            ) : null}
+            ) : null} */}
             <Button
               context='Войти'
               icon={{ id: 'lock', width: 18, height: 18 }}

@@ -12,7 +12,7 @@ export type MenuType = {
 
 export const Menu: React.ComponentType<MenuType> = ({ role }) => {
   return (
-    <div className='nav'>
+    <nav className='nav'>
       <ul className='nav__list'>
         {role.name !== 'admin' ? (
           <ListGenerate
@@ -33,6 +33,6 @@ export const Menu: React.ComponentType<MenuType> = ({ role }) => {
           />
         )}
       </ul>
-    </div>
+    </nav>
   );
 };

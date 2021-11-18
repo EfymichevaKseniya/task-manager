@@ -8,33 +8,33 @@ export type InputType = {
   type?: 'text' | 'password' | 'textarea' | 'email' | 'search' | 'tel' | 'date';
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
-  error?: any;
+  error?: string;
+  touched?: boolean;
 };
 
 export const Input: React.ComponentType<InputType> = ({
-  id,
+  id = '',
   content,
   placeholder,
   type = 'text',
-  onChange,
   value,
+  onChange,
   error = '',
-  ...props
+  touched,
 }) => {
   return (
     <>
       <div className='input'>
         <input
           className={`input__text ${id && `input__text--${id}`} ${
-            error && 'input__text--error'
+            touched && error ? 'input__text--error' : ''
           }`}
           type={type}
           placeholder={placeholder}
           id={id}
           name={id}
-          onChange={onChange}
           value={value}
-          {...props}
+          onChange={onChange}
         />
         <label htmlFor={id} className='input__label'>
           {content}
