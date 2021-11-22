@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '../Button/Button';
 import './inputSearch.scss';
 import { InputIcon, InputTypeWithIcon } from './InputWithIcon';
@@ -25,14 +25,23 @@ export const InputSearch: React.ComponentType<InputTypeSearch> = ({
     setValue(e.target.value);
   };
 
+  const rootEl = useRef(null);
+
+  useEffect(() => {
+    const onClick = (e: unknown) =>
+      rootEl.current.contains(e.target) || setIsActive(false);
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
   return (
-    <div className='search__box'>
+    <div className='search__box' ref={rootEl}>
       <InputIcon
         {...inputIcon}
         value={value}
         onChange={handleChange}
         onFocus={() => setIsActive(true)}
-        onBlur={() => setIsActive(false)}
+        // onBlur={() => setIsActive(false)}
         className={isActive ? 'input__search--active' : ''}
       />
       <Button
