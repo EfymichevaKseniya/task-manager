@@ -20,15 +20,17 @@ export const Input: React.ComponentType<InputType> = ({
   value,
   onChange,
   error = '',
-  touched,
+  touched = '',
 }) => {
   return (
     <>
       <div className='input'>
         <input
-          className={`input__text ${id && `input__text--${id}`} ${
-            touched && error ? 'input__text--error' : ''
-          }`}
+          className={`
+                input__text 
+                ${`input__text--${id}` ?? ''} 
+                ${touched && error ? 'input__text--error' : ''}
+              `}
           type={type}
           placeholder={placeholder}
           id={id}

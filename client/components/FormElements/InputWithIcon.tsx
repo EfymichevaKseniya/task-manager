@@ -18,18 +18,21 @@ export type InputTypeWithIcon = {
     | 'search'
     | 'tel'
     | 'date';
-  value?: string | any;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement> | string) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: VoidFunction;
+  onFocus?: VoidFunction;
+  onBlur?: VoidFunction;
   error?: string;
+  className?: string;
 };
 
 export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
   (
     {
+      id = '',
       placeholder,
       content,
-      id,
       size = 'normal',
       icon,
       type = 'text',
@@ -37,21 +40,34 @@ export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
       onChange,
       onClick = () => {},
       error = '',
+      onFocus,
+      onBlur,
+      className,
     },
     ref: any
   ) => {
     return (
       <>
-        <div className={`input input--${icon && icon.id}${`-${size}` ?? ''} `}>
+        <div
+          className={`input input--${type === 'date' ? icon?.id : id}${
+            `-${size}` ?? ''
+          } ${className}`}
+        >
           <input
-            className={`input__text input__text--${icon && icon.id}${
-              `-${size}` ?? ''
-            } ${error && 'input__text-error'}`}
+            className={`
+                  input__text
+                  ${`input__text--${type === 'date' ? icon?.id : id}` ?? ''} 
+                  ${`input__text--${size}` ?? ''} 
+                  ${error && 'input__text-error'}
+                `}
             type={type}
             placeholder={placeholder}
             id={id}
             name={id}
             onChange={onChange}
+            onClick={onClick}
+            onFocus={onFocus}
+            onBlur={onBlur}
             value={value}
             ref={ref}
           />

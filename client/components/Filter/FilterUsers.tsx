@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckButton } from '../Button/CheckButton';
-import { InputIcon } from '../FormElements/InputWithIcon';
+import { InputSearch } from '../FormElements/InputSearch';
 import './filter.scss';
 
 const FilterUsers: React.FC<unknown> = () => {
@@ -10,15 +10,16 @@ const FilterUsers: React.FC<unknown> = () => {
   };
   return (
     <form className='filter filter__tasks'>
-      <InputIcon
-        id='search'
-        content='Поиск'
-        placeholder='Введите название имя исполнителя'
-        icon={{
+      <InputSearch
+        inputIcon={{
           id: 'search',
-          idAdd: 'close',
+          content: 'Поиск',
+          placeholder: 'Введите название имя исполнителя',
+          icon: {
+            id: 'search',
+          },
+          type: 'search',
         }}
-        type='search'
       />
       <div className='filter__btns' id='filter__btns'>
         <CheckButton

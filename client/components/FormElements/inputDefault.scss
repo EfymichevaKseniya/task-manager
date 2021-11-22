@@ -80,12 +80,12 @@
       border-color: $red;
     }
 
-    &--calendar-normal {
+    &--calendar.input__text--normal {
       width: 39.4rem;
       padding: 1.25rem 1.5rem;
     }
 
-    &--calendar-small {
+    &--calendar.input__text--small {
       width: 18.7rem;
     }
   }

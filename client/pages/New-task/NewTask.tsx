@@ -68,7 +68,7 @@ function NewTask() {
             <form className='new-task__form' onSubmit={handleSubmit}>
               <div className='new-task__wrapper'>
                 <Select
-                  field={{
+                  fields={{
                     id: 'type',
                     placeholder: 'Выберите тип контента',
                     content: 'Тип контента',
@@ -76,7 +76,8 @@ function NewTask() {
                     icon: { id: 'arrow-down', width: 6, height: 4 },
                     error: errors.type,
                   }}
-                  options={...['Видео', 'Аудио', 'Фото']}
+                  id='type'
+                  options={['Видео', 'Аудио', 'Фото']}
                 />
                 <Input
                   id='name'
@@ -117,7 +118,7 @@ function NewTask() {
                     }}
                   />
                   <Select
-                    field={{
+                    fields={{
                       id: 'author',
                       placeholder: 'Выберите инициатора',
                       content: 'Инициатор',
@@ -125,10 +126,11 @@ function NewTask() {
                       icon: { id: 'arrow-down', width: 6, height: 4 },
                       error: errors.author,
                     }}
+                    id='author'
                     options={users.map((user) => user.name)}
                   />
                   <Select
-                    field={{
+                    fields={{
                       id: 'executor',
                       placeholder: 'Выберите ответственного',
                       content: 'Ответственный',
@@ -136,6 +138,7 @@ function NewTask() {
                       icon: { id: 'arrow-down', width: 6, height: 4 },
                       error: errors.executor,
                     }}
+                    id='executor'
                     options={users.map((user) => user.name)}
                   />
                   {/* {touched.type && errors.name && errors.author && errors.description

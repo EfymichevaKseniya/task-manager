@@ -93,7 +93,7 @@ const NewUser = () => {
                   error={values.email}
                 />
                 <Select
-                  field={{
+                  fields={{
                     id: 'role',
                     placeholder: 'Выберите роль',
                     content: 'Роль',
@@ -101,6 +101,7 @@ const NewUser = () => {
                     error: errors.role,
                     value: `${values.role}`,
                   }}
+                  id='role'
                   selected={values.role}
                   onChange={selectChooseHandler}
                   options={...['Администратор', 'Контент-мэйкер', 'Менеджер']}

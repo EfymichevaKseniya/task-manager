@@ -10,6 +10,7 @@ export type ButtonType = {
   type: 'button' | 'submit';
   size?: 'normal' | 'big' | 'small';
   onClick?: VoidFunction;
+  className?: string;
 };
 
 export const Button: React.ComponentType<ButtonType> = ({
@@ -19,10 +20,11 @@ export const Button: React.ComponentType<ButtonType> = ({
   type = 'button',
   onClick,
   size = 'normal',
+  className,
 }) => {
   return (
     <button
-      className={`btn btn__${size} btn--${color}`}
+      className={`btn ${`btn__${size}` ?? ''} btn--${color} ${className}`}
       onClick={onClick}
       type={type !== 'submit' ? 'button' : 'submit'}
     >

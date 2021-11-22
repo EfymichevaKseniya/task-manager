@@ -21,11 +21,6 @@ const Filter: React.FC<unknown> = () => {
           },
           type: 'search',
         }}
-        icon={{
-          id: 'close',
-          width: 10,
-          height: 10,
-        }}
       />
       <DatePicker
         props={{
@@ -39,11 +34,6 @@ const Filter: React.FC<unknown> = () => {
             height: 16,
           },
         }}
-        // icon={{
-        //   id: 'calendar',
-        //   width: 10,
-        //   height: 10,
-        // }}
       />
       <div className='filter__btns'>
         <CheckButton

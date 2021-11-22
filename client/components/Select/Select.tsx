@@ -4,7 +4,8 @@ import { InputTypeWithIcon, InputIcon } from '../FormElements/InputWithIcon';
 import './select.scss';
 
 export type SelectType = {
-  field: InputTypeWithIcon;
+  id: string;
+  fields: InputTypeWithIcon;
   options: string[];
   size?: string;
   onClick?: VoidFunction;
@@ -16,7 +17,8 @@ export const Select: React.ComponentType<SelectType> = ({
   size = '',
   options,
   onChange = () => {},
-  field,
+  fields,
+  id = '',
 }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState('');
@@ -35,10 +37,14 @@ export const Select: React.ComponentType<SelectType> = ({
         className={`select ${size && `select--${size}`}`}
         onClick={() => setOpen(!isOpen)}
       >
-        <InputIcon {...field} value={selected} onChange={() => setSelected} />
+        <InputIcon {...fields} value={selected} onChange={() => setSelected} />
         {isOpen && (
           <div className='select__dropdown'>
-            <ul className={`select__dropdown-content ${isOpen && 'show'}`}>
+            <ul
+              className={`select__dropdown-content select__dropdown-content--${id} ${
+                isOpen && 'show'
+              }`}
+            >
               {options.map((item, i) => {
                 return (
                   <li

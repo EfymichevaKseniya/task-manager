@@ -23,7 +23,7 @@ export const ButtonLink: React.ComponentType<ButtonLinkType> = ({
   return (
     <Link
       to={`/${path}`}
-      className={`btn btn__${size} btn--${color}`}
+      className={`btn ${size ?? `btn__${size}`} btn--${color}`}
       onClick={onClick}
     >
       {icon && <CustomIcon {...icon} />}
