@@ -26,7 +26,7 @@ export const Button: React.ComponentType<ButtonType> = ({
     <button
       className={`btn btn__${size} btn--${color} ${className}`}
       onClick={onClick}
-      type={type !== 'submit' ? 'button' : 'submit'}
+      type={type}
     >
       {icon && <CustomIcon {...icon} />}
       {context ? <span className='btn-text'>{context}</span> : ''}

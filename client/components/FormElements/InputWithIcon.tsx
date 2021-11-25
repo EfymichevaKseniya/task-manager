@@ -40,14 +40,12 @@ export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
   ) => {
     return (
       <>
-        <div
-          className={`input input--${icon?.id}${`-${size}` ?? ''} ${className}`}
-        >
+        <div className={`input input--${icon?.id}${`-${size}`} ${className}`}>
           <input
             className={`
                   input__text
                   ${`input__text--${icon?.id}` ?? ''} 
-                  ${`input__text--${size}` ?? ''} 
+                  ${`input__text--${size}`} 
                   ${error && 'input__text-error'}
                 `}
             type={type}
