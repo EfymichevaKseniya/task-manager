@@ -6,7 +6,7 @@ import './button.scss';
 export type ButtonLinkType = {
   context?: string;
   icon?: IconType;
-  color?: 'primary' | 'blue' | 'red' | 'green' | 'transparent';
+  color?: Color;
   path: string;
   size?: 'normal' | 'big' | 'small';
   onClick?: VoidFunction;

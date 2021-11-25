@@ -81,12 +81,18 @@
 
     &--status {
       width: 18.7rem;
-      transform: translate(-110%, 2rem);
+      transform: translate(3%, 2rem);
     }
 
-    &--assignee,
-    &--init {
+    &--type {
+      width: 18.7rem;
+      transform: translate(-100%, 2rem);
+    }
+
+    &--author,
+    &--executor {
       width: 30.5rem;
+      transform: translate(-100%, 2rem);
     }
   }
 
@@ -94,6 +100,7 @@
     padding: 1.4rem 1.4rem;
     display: block;
     color: inherit;
+    cursor: pointer;
 
     &:not(:last-child) {
       border-bottom: 1px solid $blue-outline;

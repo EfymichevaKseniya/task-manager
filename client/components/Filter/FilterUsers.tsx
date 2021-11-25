@@ -1,42 +1,53 @@
-import React from 'react';
-import { InputCheckbox } from '../Input/InputCheckbox';
-import { InputIcon } from '../Input/InputWithIcon';
+import React, { useState } from 'react';
+import { CheckButton } from '../Button/CheckButton';
+import { InputSearch } from '../FormElements/InputSearch';
 import './filter.scss';
 
 const FilterUsers: React.FC<unknown> = () => {
+  const [isActive, setActive] = useState(false);
+  const handleChange = () => {
+    setActive(!isActive);
+  };
   return (
     <form className='filter filter__tasks'>
-      <InputIcon
-        id='search'
-        content='Поиск'
-        placeholder='Введите название имя исполнителя'
-        icon={{
+      <InputSearch
+        inputIcon={{
           id: 'search',
-          idAdd: 'close',
+          content: 'Поиск',
+          placeholder: 'Введите название имя исполнителя',
+          icon: {
+            id: 'search',
+          },
+          type: 'search',
         }}
-        type='search'
       />
       <div className='filter__btns' id='filter__btns'>
-        <InputCheckbox
+        <CheckButton
           context='Все'
-          onClick={() => {}}
           userRole='all'
-          defaultChecked
+          checked={isActive}
+          onChange={handleChange}
         />
-        <InputCheckbox
+        <CheckButton
           context='Контент-мейкер'
           onClick={() => {}}
           userRole='contentMaker'
+          checked={isActive}
+          onChange={handleChange}
         />
-        <InputCheckbox
+        <CheckButton
           context='Менеджер'
           onClick={() => {}}
           userRole='manager'
+          checked={isActive}
+          onChange={handleChange}
         />
-        <InputCheckbox
+        <CheckButton
           context='Администратор'
           onClick={() => {}}
           userRole='admin'
+          checked={isActive}
+          onChange={handleChange}
         />
         <span className='filter__btns-label input__label'>Роль</span>
       </div>

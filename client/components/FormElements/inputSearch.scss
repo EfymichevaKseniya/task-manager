@@ -1,0 +1,59 @@
+@import '../../styles/colors.scss';
+
+.search__box {
+  position: relative;
+
+  & input[type='search']::-webkit-search-cancel-button {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &-btn__reset {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+    position: absolute;
+    right: 2.5rem;
+    top: 0.3rem;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+    }
+  }
+
+  & .input--search-normal {
+    position: relative;
+  }
+
+  & .input__search--active {
+    & .icon--search {
+      transform: translate(-35rem);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    & .input__text--search {
+      padding-left: 4rem !important;
+    }
+
+    caret-color: $txt;
+  }
+
+  & .input__text--normal {
+    width: 39.4rem;
+  }
+
+  & .input__text--search {
+    caret-color: $txt;
+    color: inherit;
+
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}

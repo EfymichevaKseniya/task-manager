@@ -31,7 +31,8 @@
     "no-use-before-define": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
-    "jsx-quotes": ["error", "prefer-single"]
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/button-has-type": "warn"
   },
   "overrides": [
     {

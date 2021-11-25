@@ -4,8 +4,8 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useAppDispatch } from '../../store/store';
 import { addNewUser } from '../../store/actions/ActionCreatorsUsers';
-import { Input } from '../../components/Input/InputDefault';
-import { InputIcon } from '../../components/Input/InputWithIcon';
+import { Input } from '../../components/FormElements/InputDefault';
+import { InputIcon } from '../../components/FormElements/InputWithIcon';
 import { InputFile } from '../../components/Input/InputFile';
 import { Select } from '../../components/Select/Select';
 import { ButtonLink } from '../../components/Button/ButtonLink';
@@ -93,7 +93,7 @@ const NewUser = () => {
                   error={values.email}
                 />
                 <Select
-                  field={{
+                  fields={{
                     id: 'role',
                     placeholder: 'Выберите роль',
                     content: 'Роль',
@@ -101,6 +101,7 @@ const NewUser = () => {
                     error: errors.role,
                     value: `${values.role}`,
                   }}
+                  id='role'
                   selected={values.role}
                   onChange={selectChooseHandler}
                   options={...['Администратор', 'Контент-мэйкер', 'Менеджер']}

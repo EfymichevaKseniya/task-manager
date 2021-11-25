@@ -12,7 +12,7 @@ const userAvatar = require('../../../public/img/profile-photo.png');
 
 const Header: React.FC<unknown> = () => {
   return (
-    <div className='header'>
+    <header className='header'>
       <div className='header__container container'>
         <div className='header__wrapper'>
           <div className='header__wrapper-left__side'>
@@ -43,7 +43,7 @@ const Header: React.FC<unknown> = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
