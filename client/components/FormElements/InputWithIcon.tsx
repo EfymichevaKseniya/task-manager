@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, HTMLInputTypeAttribute } from 'react';
 import { CustomIcon, IconType } from '../Icon/Icon';
 
 import './inputDefault.scss';
@@ -9,15 +9,7 @@ export type InputTypeWithIcon = {
   placeholder: string;
   size?: string;
   icon?: IconType;
-  type?:
-    | 'text'
-    | 'password'
-    | 'textarea'
-    | 'checkbox'
-    | 'email'
-    | 'search'
-    | 'tel'
-    | 'date';
+  type?: HTMLInputTypeAttribute;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: VoidFunction;
@@ -49,14 +41,12 @@ export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
     return (
       <>
         <div
-          className={`input input--${type === 'date' ? icon?.id : id}${
-            `-${size}` ?? ''
-          } ${className}`}
+          className={`input input--${icon?.id}${`-${size}` ?? ''} ${className}`}
         >
           <input
             className={`
                   input__text
-                  ${`input__text--${type === 'date' ? icon?.id : id}` ?? ''} 
+                  ${`input__text--${icon?.id}` ?? ''} 
                   ${`input__text--${size}` ?? ''} 
                   ${error && 'input__text-error'}
                 `}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { RoleType } from '../../domain/roleType';
 import { Content, ContentType } from '../Content/Content';
 import { CustomIcon, IconType } from '../Icon/Icon';
 import './checkButton.scss';
@@ -9,11 +10,11 @@ export type CheckButtonType = {
   context?: string;
   onChange?: VoidFunction;
   onClick?: VoidFunction;
-  userRole?: 'admin' | 'contentMaker' | 'manager' | 'all';
+  userRole?: RoleType['key'] | 'all';
   checked?: boolean;
   isActive?: boolean;
   icon?: IconType;
-  color?: string;
+  color?: Color;
 };
 
 export const CheckButton: React.ComponentType<CheckButtonType> = ({
@@ -25,7 +26,7 @@ export const CheckButton: React.ComponentType<CheckButtonType> = ({
   userRole = 'all',
   isActive,
   icon,
-  color,
+  color = '',
 }) => {
   return (
     <label
@@ -43,22 +44,15 @@ export const CheckButton: React.ComponentType<CheckButtonType> = ({
         onChange={onChange}
       />
       {type && <Content {...type} />}
-      {context && icon && (
+      {context && (
         <div
           className={`checkbox__content ${
             color ?? `checkbox__content--${color}`
           }`}
         >
-          <CustomIcon {...icon} />
+          {icon && <CustomIcon {...icon} />}
           <span className='checkbox__text'>{context}</span>
         </div>
-      )}
-      {context && (
-        <span
-          className={`checkbox__text ${color ?? `checkbox__content--${color}`}`}
-        >
-          {context}
-        </span>
       )}
     </label>
   );

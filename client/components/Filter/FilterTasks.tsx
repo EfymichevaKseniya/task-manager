@@ -43,7 +43,6 @@ const FilterTasks: React.FC<unknown> = () => {
             height: 16,
           },
           size: 'small',
-          type: 'date',
         }}
       />
       <div className='filter__btns' id='filter__btns'>

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { HTMLInputTypeAttribute } from 'react';
 import './inputDefault.scss';
 
 export type InputType = {
   id: string;
   content: string;
   placeholder: string;
-  type?: 'text' | 'password' | 'textarea' | 'email' | 'search' | 'tel' | 'date';
+  type?: HTMLInputTypeAttribute;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
   error?: string;
@@ -20,7 +20,7 @@ export const Input: React.ComponentType<InputType> = ({
   value,
   onChange,
   error = '',
-  touched = '',
+  touched = false,
 }) => {
   return (
     <>
@@ -28,7 +28,7 @@ export const Input: React.ComponentType<InputType> = ({
         <input
           className={`
                 input__text 
-                ${`input__text--${id}` ?? ''} 
+                input__text--${id} 
                 ${touched && error ? 'input__text--error' : ''}
               `}
           type={type}

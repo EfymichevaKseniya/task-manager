@@ -6,7 +6,7 @@ import './button.scss';
 export type ButtonLinkType = {
   context?: string;
   icon?: IconType;
-  color?: 'primary' | 'blue' | 'red' | 'green' | 'transparent';
+  color?: Color;
   path: string;
   size?: 'normal' | 'big' | 'small';
   onClick?: VoidFunction;
@@ -23,7 +23,7 @@ export const ButtonLink: React.ComponentType<ButtonLinkType> = ({
   return (
     <Link
       to={`/${path}`}
-      className={`btn ${size ?? `btn__${size}`} btn--${color}`}
+      className={`btn btn__${size} btn--${color}`}
       onClick={onClick}
     >
       {icon && <CustomIcon {...icon} />}

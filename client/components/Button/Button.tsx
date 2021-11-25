@@ -6,10 +6,10 @@ import './button.scss';
 export type ButtonType = {
   context?: string;
   icon?: IconType;
-  color?: 'primary' | 'blue' | 'red' | 'green' | 'transparent';
+  color?: Color;
   type: 'button' | 'submit';
   size?: 'normal' | 'big' | 'small';
-  onClick?: VoidFunction;
+  onClick?: () => void;
   className?: string;
 };
 
@@ -24,13 +24,11 @@ export const Button: React.ComponentType<ButtonType> = ({
 }) => {
   return (
     <button
-      className={`btn ${`btn__${size}` ?? ''} btn--${color} ${className}`}
+      className={`btn btn__${size} btn--${color} ${className}`}
       onClick={onClick}
       type={type !== 'submit' ? 'button' : 'submit'}
     >
-      {
-        icon && <CustomIcon {...icon} /> // компонента иконки
-      }
+      {icon && <CustomIcon {...icon} />}
       {context ? <span className='btn-text'>{context}</span> : ''}
     </button>
   );

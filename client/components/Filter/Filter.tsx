@@ -27,7 +27,6 @@ const Filter: React.FC<unknown> = () => {
           content: 'Дата публикации',
           id: 'calendar',
           placeholder: 'Укажите дату',
-          type: 'date',
           icon: {
             id: 'calendar',
             width: 16,

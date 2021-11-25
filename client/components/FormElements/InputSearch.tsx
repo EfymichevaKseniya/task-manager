@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '../Button/Button';
 import './inputSearch.scss';
+import useOutsideClick from '../../services/useClickOutside';
 import { InputIcon, InputTypeWithIcon } from './InputWithIcon';
 
 export type InputTypeSearch = {
@@ -14,11 +15,9 @@ export const InputSearch: React.ComponentType<InputTypeSearch> = ({
   const [value, setValue] = useState('');
   const [isActive, setIsActive] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (elem: string) => {
     setValue('');
-    (
-      document.querySelector('.input__text--search') as HTMLInputElement
-    )?.focus();
+    (document.querySelector(elem) as HTMLInputElement)?.focus();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,12 +26,9 @@ export const InputSearch: React.ComponentType<InputTypeSearch> = ({
 
   const rootEl = useRef(null);
 
-  useEffect(() => {
-    const onClick = (e: unknown) =>
-      rootEl.current.contains(e.target) || setIsActive(false);
-    document.addEventListener('click', onClick);
-    return () => document.removeEventListener('click', onClick);
-  }, []);
+  useOutsideClick(rootEl, () => {
+    setIsActive(false);
+  });
 
   return (
     <div className='search__box' ref={rootEl}>
@@ -41,13 +37,12 @@ export const InputSearch: React.ComponentType<InputTypeSearch> = ({
         value={value}
         onChange={handleChange}
         onFocus={() => setIsActive(true)}
-        // onBlur={() => setIsActive(false)}
         className={isActive ? 'input__search--active' : ''}
       />
       <Button
         type='button'
         color='transparent'
-        onClick={handleClick}
+        onClick={() => handleClick('.input__text--search')}
         icon={{
           id: 'close',
           width: 10,

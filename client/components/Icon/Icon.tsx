@@ -22,6 +22,19 @@ export const CustomIcon: React.ComponentType<IconType> = ({
     setActive(!active);
     onClick();
   };
+
+  const addIcon = () => {
+    let additionalIcon;
+    if (idAdd) {
+      additionalIcon = (
+        <use
+          className={`icon__path ${active ? '' : 'hidden'}`}
+          xlinkHref={`${iconSvg}#${idAdd}`}
+        />
+      );
+    }
+    return additionalIcon;
+  };
   return (
     <svg
       className={`icon icon--${id}`}
@@ -32,12 +45,7 @@ export const CustomIcon: React.ComponentType<IconType> = ({
         xlinkHref={`${iconSvg}#${id}`}
         className={`icon__path ${active && idAdd ? 'hidden' : ''}`}
       />
-      {idAdd && (
-        <use
-          className={`icon__path ${active && idAdd ? '' : 'hidden'}`}
-          xlinkHref={`${iconSvg}#${idAdd}`}
-        />
-      )}
+      {addIcon}
     </svg>
   );
 };
