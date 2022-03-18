@@ -22,7 +22,7 @@ export type InputTypeWithIcon = {
 export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
   (
     {
-      id = '',
+      id,
       placeholder,
       content,
       size = 'normal',
@@ -36,15 +36,19 @@ export const InputIcon: React.ComponentType<InputTypeWithIcon> = forwardRef(
       onBlur,
       className,
     },
-    ref: any
+    ref: React.ForwardedRef<null>
   ) => {
     return (
       <>
-        <div className={`input input--${icon?.id}${`-${size}`} ${className}`}>
+        <div
+          className={`input input--${id ?? icon?.id}${`-${
+            size ?? ''
+          }`} ${className}`}
+        >
           <input
             className={`
                   input__text
-                  ${`input__text--${icon?.id}` ?? ''} 
+                  ${`input__text--${id ?? icon?.id}`} 
                   ${`input__text--${size}`} 
                   ${error && 'input__text-error'}
                 `}

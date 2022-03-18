@@ -1,16 +1,31 @@
 import React, { useState } from 'react';
+import { useFormik } from 'formik';
 import { CheckButton } from '../Button/CheckButton';
 import { InputSearch } from '../FormElements/InputSearch';
 import DatePicker from '../Input/DatepickerInput';
+import { FilterType } from '../../domain/filter';
 import './filter.scss';
 
-const Filter: React.FC<unknown> = () => {
-  const [isActive, setActive] = useState(false);
-  const handleChange = () => {
-    setActive(!isActive);
+export type FilterChangeType = {
+  onChange?: (data: FilterType) => void;
+};
+
+const Filter: React.FC<FilterType & FilterChangeType> = (filter) => {
+  const [params, setParams] = useState(filter);
+  console.log(params);
+
+  const handleChangeForm = (data: FilterType) => {
+    // onChange(data);
+    setParams(data);
   };
+
+  const { values, setFieldValue } = useFormik({
+    initialValues: filter,
+    onSubmit: () => {},
+  });
+
   return (
-    <form className='filter'>
+    <form className='filter' onChange={() => handleChangeForm(values)}>
       <InputSearch
         inputIcon={{
           id: 'search',
@@ -21,6 +36,8 @@ const Filter: React.FC<unknown> = () => {
           },
           type: 'search',
         }}
+        value={values.searchText}
+        onChange={(e) => setFieldValue('searchText', e)}
       />
       <DatePicker
         props={{
@@ -33,9 +50,29 @@ const Filter: React.FC<unknown> = () => {
             height: 16,
           },
         }}
+        value={values.date}
+        onChange={(e) => setFieldValue('date', e)}
       />
       <div className='filter__btns'>
-        <CheckButton
+        {Object.entries(values.checkboxes).map(([key, value]) => {
+          return (
+            <CheckButton
+              key={key}
+              modification={key}
+              type={{
+                type: {
+                  id: key,
+                  name: key,
+                  width: 10,
+                  height: 10,
+                },
+              }}
+              checked={value}
+              onChange={(e) => setFieldValue(`checkboxes.${key}`, e)}
+            />
+          );
+        })}
+        {/* <CheckButton
           modification='video'
           type={{
             type: {
@@ -73,7 +110,7 @@ const Filter: React.FC<unknown> = () => {
           modification='audio'
           checked={isActive}
           onChange={handleChange}
-        />
+        /> */}
         <span className='filter__btns-label input__label'>Тип контента</span>
       </div>
     </form>

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import './inputSearch.scss';
 import useOutsideClick from '../../services/useClickOutside';
@@ -7,10 +7,13 @@ import { InputIcon, InputTypeWithIcon } from './InputWithIcon';
 export type InputTypeSearch = {
   inputIcon: InputTypeWithIcon;
   onClick?: VoidFunction;
+  value?: string;
+  onChange?: (data: string) => void;
 };
 
 export const InputSearch: React.ComponentType<InputTypeSearch> = ({
   inputIcon,
+  onChange = () => {},
 }) => {
   const [value, setValue] = useState('');
   const [isActive, setIsActive] = useState(false);
@@ -29,6 +32,10 @@ export const InputSearch: React.ComponentType<InputTypeSearch> = ({
   useOutsideClick(rootEl, () => {
     setIsActive(false);
   });
+
+  useEffect(() => {
+    onChange(value);
+  }, [value]);
 
   return (
     <div className='search__box' ref={rootEl}>

@@ -6,7 +6,7 @@ import changesIconService from '../../services/iconAdapter';
 
 export type ContentType = {
   type: {
-    id: number | string;
+    id: Id;
     name: string;
     width?: number;
     height?: number;

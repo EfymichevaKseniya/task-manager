@@ -1,6 +1,6 @@
-export type ContentType = { [key: string]: string };
+export type ContentNameType = { [key: string]: string };
 
-export const contentType: ContentType = {
+export const contentNameType: ContentNameType = {
   video: 'Видео',
   audio: 'Аудио',
   photo: 'Фото',

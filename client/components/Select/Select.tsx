@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 // import { UserType } from '../../store/models/IUser';
 import { InputTypeWithIcon, InputIcon } from '../FormElements/InputWithIcon';
+import useOutsideClick from '../../services/useClickOutside';
 import './select.scss';
 
 export type SelectType = {
@@ -20,8 +21,14 @@ export const Select: React.ComponentType<SelectType> = ({
   fields,
   id = '',
 }) => {
-  const [isOpen, setOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [selected, setSelected] = useState('');
+
+  const rootEl = useRef(null);
+
+  useOutsideClick(rootEl, () => {
+    setIsOpen(false);
+  });
 
   useEffect(() => {
     onChange(selected);
@@ -35,7 +42,8 @@ export const Select: React.ComponentType<SelectType> = ({
     <>
       <div
         className={`select ${size && `select--${size}`}`}
-        onClick={() => setOpen(!isOpen)}
+        onClick={() => setIsOpen(!isOpen)}
+        ref={rootEl}
       >
         <InputIcon {...fields} value={selected} onChange={() => setSelected} />
         {isOpen && (
@@ -52,7 +60,7 @@ export const Select: React.ComponentType<SelectType> = ({
                     key={`${i + 9482348}`}
                     onClick={() => {
                       setSelected(item);
-                      setOpen(false);
+                      setIsOpen(false);
                     }}
                   >
                     <span

@@ -1,9 +1,9 @@
-import { contentType } from '../domain/contentType';
+import { contentNameType } from '../domain/contentType';
 
 // input adapter
 const serviceAdapter = (obj: { id: Id; name: string }) => ({
   ...obj,
-  text: contentType[obj.name],
+  text: contentNameType[obj.name],
 });
 
 // let str: string = '';

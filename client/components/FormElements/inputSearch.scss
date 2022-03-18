@@ -34,6 +34,10 @@
 
     & .input__text--search {
       padding-left: 4rem !important;
+
+      &::placeholder {
+        color: transparent;
+      }
     }
 
     caret-color: $txt;
@@ -46,10 +50,6 @@
   & .input__text--search {
     caret-color: $txt;
     color: inherit;
-
-    &::placeholder {
-      color: transparent;
-    }
   }
 }
 

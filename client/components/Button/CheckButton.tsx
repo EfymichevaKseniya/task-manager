@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { RoleType } from '../../domain/roleType';
 import { Content, ContentType } from '../Content/Content';
 import { CustomIcon, IconType } from '../Icon/Icon';
@@ -6,10 +6,12 @@ import './checkButton.scss';
 
 export type CheckButtonType = {
   type?: ContentType;
-  modification?: 'video' | 'audio' | 'photo';
+  modification?: ContentName;
   context?: string;
-  onChange?: VoidFunction;
-  onClick?: VoidFunction;
+  onChange?: (data: boolean) => void;
+  onClick?: (data: unknown) => void;
+  // onChange?: VoidFunction;
+  // onClick?: VoidFunction;
   userRole?: RoleType['key'] | 'all';
   checked?: boolean;
   isActive?: boolean;
@@ -19,15 +21,23 @@ export type CheckButtonType = {
 
 export const CheckButton: React.ComponentType<CheckButtonType> = ({
   type,
-  modification = '',
+  modification = 'video',
   onChange = () => {},
   onClick = () => {},
   context,
   userRole = 'all',
-  isActive,
   icon,
   color = '',
 }) => {
+  const [isActive, setIsActive] = useState(false);
+  // const handleChangeCheckbox = () => {
+  //   setActive(!isActive);
+  // };
+
+  useEffect(() => {
+    onChange(isActive);
+  }, [isActive]);
+
   return (
     <label
       className={`checkbox__btn checkbox__btn--${modification || userRole}`}
@@ -41,7 +51,7 @@ export const CheckButton: React.ComponentType<CheckButtonType> = ({
         id={modification || userRole}
         checked={isActive}
         onClick={onClick}
-        onChange={onChange}
+        onChange={() => setIsActive(!isActive)}
       />
       {type && <Content {...type} />}
       {context && (
